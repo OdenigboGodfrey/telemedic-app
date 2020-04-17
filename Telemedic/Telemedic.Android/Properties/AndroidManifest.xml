@@ -8,6 +8,6 @@
 	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 	<uses-permission android:name="android.permission.INTERNET" />
 	<application android:label="Telemedic.Android">
-		<meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyDicU1E1g65vOMFD4nlooagUTJ9TTOjPaE" />
+		<meta-data android:name="com.google.android.geo.API_KEY" android:value="API_KEY" />
 	</application>
 </manifest>

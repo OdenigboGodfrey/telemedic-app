@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Telemedic.MedicalHistoryPage">
+    <StackLayout
+        Orientation="Vertical"
+        Spacing="0"
+        >
+        <Button
+            x:Name="_ViewRequestButton"
+            Clicked="_ViewRequestButton_Clicked"
+            Style="{StaticResource _MedAppButtonTextTemplate}"
+            BackgroundColor="{StaticResource _MedAppLightBlue}"
+            HorizontalOptions="End"
+            Text="View Request"
+            Margin="0,3,10,0"
+            WidthRequest="120"
+            IsVisible="False"
+            />
+        <Frame
+            CornerRadius="0"
+            HasShadow="false"
+            Padding="10"
+            Margin="10"
+            HeightRequest="50"
+            BackgroundColor="{StaticResource _MedAppChatBackground}"
+            >
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="PersonalRecords_Tapped" />
+            </Frame.GestureRecognizers>
+            <Grid>
+                <Label
+                    Text="Personal Records"
+                    FontSize="18"
+                    TextColor="{StaticResource _MedAppLightBlue}"
+                    VerticalTextAlignment="Center"
+                    />
+                <BoxView
+                    Style="{StaticResource _BoxViewBottomLine}"
+                    BackgroundColor="White"
+                    />
+            </Grid>
+            
+        </Frame>
+        <Frame
+            CornerRadius="0"
+            HasShadow="false"
+            Padding="10"
+            Margin="10"
+            HeightRequest="50"
+            BackgroundColor="{StaticResource _MedAppChatBackground}"
+            >
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="MedicalRecords_Tapped" />
+            </Frame.GestureRecognizers>
+            <Grid>
+                <Label
+                    Text="Medical Records"
+                    FontSize="18"
+                    TextColor="{StaticResource _MedAppLightBlue}"
+                    VerticalTextAlignment="Center"
+                    />
+                <BoxView
+                    Style="{StaticResource _BoxViewBottomLine}"
+                    BackgroundColor="White"
+                    />
+            </Grid>
+            
+        </Frame>
+        <Frame
+            CornerRadius="0"
+            HasShadow="false"
+            Padding="10"
+            Margin="10"
+            HeightRequest="50"
+            BackgroundColor="{StaticResource _MedAppChatBackground}"
+            >
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="LabRecords_Tapped" />
+            </Frame.GestureRecognizers>
+            <Grid>
+                <Label
+                    Text="Lab Records"
+                    FontSize="18"
+                    TextColor="{StaticResource _MedAppLightBlue}"
+                    VerticalTextAlignment="Center"
+                    />
+                <BoxView
+                    Style="{StaticResource _BoxViewBottomLine}"
+                    BackgroundColor="White"
+                    />
+            </Grid>
+        </Frame>
+        <Frame
+            CornerRadius="0"
+            HasShadow="false"
+            Padding="10"
+            Margin="10"
+            HeightRequest="50"
+            BackgroundColor="{StaticResource _MedAppChatBackground}"
+            >
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="DrugPrescriptions_Tapped" />
+            </Frame.GestureRecognizers>
+            <Grid>
+                <Label
+                    Text="Drug Prescriptions"
+                    FontSize="18"
+                    TextColor="{StaticResource _MedAppLightBlue}"
+                    VerticalTextAlignment="Center"
+                    />
+                <BoxView
+                    Style="{StaticResource _BoxViewBottomLine}"
+                    BackgroundColor="White"
+                    />
+            </Grid>
+            
+        </Frame>
+    </StackLayout>
+</ContentPage>

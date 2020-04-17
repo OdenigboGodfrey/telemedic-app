@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Telemedic.HospitalBasicDetailsPage">
+    <StackLayout
+        Orientation="Vertical"
+        HorizontalOptions="FillAndExpand"
+        VerticalOptions="FillAndExpand"
+        Margin="25"
+        >
+        <Frame
+            CornerRadius="0"
+            HasShadow="True"
+            BorderColor="{StaticResource _MedAppAsh}"
+            BackgroundColor="White"
+            >
+            <Label
+                Text="SET HOSPITAL NAME AND SPECIALITY"
+                TextColor="{StaticResource _MedAppLightBlue}"
+                FontAttributes="Bold"
+                FontSize="20"
+                />
+        </Frame>
+        <Label
+            Text="NAME"
+            HorizontalTextAlignment="Start"
+            />
+        <Entry
+            x:Name="_HospitalName"
+            Placeholder="Enter Hospital Name"
+            HorizontalOptions="FillAndExpand"
+            />
+        <Label
+            Text="SPECIALITY"
+            />
+        <Picker
+            x:Name="_Speciality"
+            HorizontalOptions="FillAndExpand"
+            />
+        <Button
+            x:Name="_Submit"
+            Text="SUBMIT"
+            CornerRadius="5"
+            BackgroundColor="{StaticResource _MedAppLightBlue}"
+            Style="{StaticResource _MedAppButtonTextTemplate}"
+            Clicked="_Submit_Clicked"
+            />
+    </StackLayout>
+</ContentPage>

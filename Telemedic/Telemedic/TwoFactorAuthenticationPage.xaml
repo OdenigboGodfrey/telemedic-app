@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Telemedic.TwoFactorAuthenticationPage">
+    <StackLayout 
+        Orientation="Vertical"
+        Padding="3"
+        >
+        <Frame
+            Style="{StaticResource _FrameContainer}"
+            HorizontalOptions="FillAndExpand"
+            Margin="3,0,3,10"
+            BackgroundColor="White"
+            HasShadow="True"
+            Padding="3"
+            >
+            <Label
+                Text="TWO FACTOR AUTHENTICATION"
+                TextColor="{StaticResource _MedAppLightBlue}"
+                FontSize="18"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center"
+                HeightRequest="50"
+                />
+        </Frame>
+        <StackLayout
+            Orientation="Vertical"
+            Padding="5"
+            Margin="5"
+            >
+            <Label
+                Text="ENTER YOUR AUTHENTICATION PIN"
+                />
+            <Label
+                x:Name="_PhoneNoPlace"
+                Text="A message with a pin was just sent to ********378"
+                />
+            <Entry
+                x:Name="_2fa"
+                Placeholder="Enter the 6-digit pin"
+                HorizontalOptions="FillAndExpand"
+                />
+            <Button
+                Text="DONE"
+                Style="{StaticResource _MedAppButtonTextTemplate}"
+                BackgroundColor="{StaticResource _MedAppLightBlue}"
+                CornerRadius="5"
+                />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

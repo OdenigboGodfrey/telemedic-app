@@ -1,0 +1,571 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Telemedic.SettingsPage"
+             xmlns:images="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             >
+    <ContentPage.Resources>
+
+        <Style x:Key="_GridCols" TargetType="Grid">
+            <Setter Property="Grid.ColumnDefinitions">
+                <Setter.Value>
+                    <ColumnDefinitionCollection>
+                        <ColumnDefinition Width=".1*"/>
+                        <ColumnDefinition Width=".7*"/>
+                        <ColumnDefinition Width=".2*"/>
+                    </ColumnDefinitionCollection>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Margin" Value="2"/>
+        </Style>
+
+        <Style x:Key="_ImageStyling" TargetType="Image">
+            <Setter Property="WidthRequest" Value="20"/>
+            <Setter Property="HeightRequest" Value="20"/>
+            <Setter Property="Aspect" Value="AspectFit"/>
+        </Style>
+
+        <Style x:Key="_CenterLabelStyling" TargetType="Label">
+            <Setter Property="HorizontalTextAlignment" Value="Start"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="TextColor" Value="{StaticResource _MedAppBlack}"/>
+        </Style>
+
+        <Style x:Key="_LabelArrow" TargetType="Label">
+            <Setter Property="Text" Value=">"/>
+            <Setter Property="Grid.Column" Value="2"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="TextColor" Value="{StaticResource _MedAppLightBlue}"/>
+            <Setter Property="HorizontalTextAlignment" Value="End"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <Grid
+        x:Name="_ParentGrid"
+        >
+        <Image
+            x:Name="_BgImage"
+            Aspect="Fill"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            />
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+            <ImageButton
+                x:Name="_BackButton"
+                Source="ic_arrow_back.png"
+                Aspect="AspectFit"
+                WidthRequest="20"
+                HeightRequest="20"
+                HorizontalOptions="Start"
+                VerticalOptions="Start"
+                Clicked="_BackButton_Clicked"
+                Margin="0,20,0,0"
+                />
+            <!--Top bar title-->
+            <Grid
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="Start"
+                HeightRequest="50"
+                >
+                <Label
+                    Text="Profile"
+                    TextColor="White"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    FontSize="Large"/>
+            </Grid>
+        </StackLayout>
+        
+        <Frame
+            CornerRadius="0"
+            BackgroundColor="{StaticResource _MedAppChatBackground}"
+            VerticalOptions="End"
+            HeightRequest="20"
+            />
+        
+        <Frame
+            VerticalOptions="Fill"
+            Margin="0,50,0,0"
+            BackgroundColor="{StaticResource _MedAppChatBackground}"
+            HasShadow="False"
+            >
+            <StackLayout
+                Orientation="Vertical"
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand"
+                >
+                
+                <!--Upper grid for image and location-->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width=".4*"/>
+                        <ColumnDefinition Width=".6*"/>
+                    </Grid.ColumnDefinitions>
+                    <AbsoluteLayout
+                        Grid.Column="0"
+                        x:Name="_ForAndroid"
+                        HorizontalOptions="Start"
+                        VerticalOptions="Start"
+                        >
+                        <Grid
+                            Margin="10">
+                            <images:CircleImage
+                                x:Name="_AndroidProfilePic"
+                                Aspect="AspectFill"
+                                BorderColor="{StaticResource _MedAppLightBlue}"
+                                BorderThickness="1"
+                                HeightRequest="100"
+                                WidthRequest="100"
+                                />
+                            <Label
+                                Text="Tap to change"
+                                FontSize="12"
+                                TextColor="{StaticResource _MedAppLightBlue}"
+                                HeightRequest="100"
+                                WidthRequest="100"
+                                HorizontalOptions="Center"
+                                HorizontalTextAlignment="Center"
+                                VerticalOptions="Center"
+                                VerticalTextAlignment="Center"
+                                >
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="UpdateProfileLabelTapped"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </Grid>
+                    </AbsoluteLayout>
+                    <StackLayout
+                        Orientation="Vertical"
+                        Grid.Column="1"
+                        >
+                        <Label 
+                            x:Name="_Username"
+                            Text="Silas Ogar"
+                            FontAttributes="Bold"
+                            FontSize="24"
+                            TextColor="{StaticResource _MedAppLightBlue}"
+                            />
+                        <StackLayout
+                            Orientation="Horizontal"
+                            >
+                            <Image
+                                x:Name="_LocationIcon"
+                                Style="{StaticResource _ImageStyling}"
+                                />
+                            <Label
+                                x:Name="_UserAddress"
+                                Text="30, Wetheral Road, Owerri, Imo State"
+                                />
+                        </StackLayout>
+                    </StackLayout>
+                </Grid>
+                <!--Lower grid for profile info
+                based of UI mockups from swift
+                -->
+                <ScrollView
+                    VerticalScrollBarVisibility="Default"
+                    >
+                    <StackLayout 
+                        x:Name="_ParentStack"
+                        Orientation="Vertical"
+                        Margin="0,30,0,0"
+                        Padding="0,0,0,20"
+                        >
+                        <Label
+                                Text="General Settings"
+                                TextColor="{StaticResource _MedAppLightBlue}"
+                                FontAttributes="Bold"
+                                HorizontalOptions="FillAndExpand"
+                                />
+                        <BoxView
+                                BackgroundColor="{StaticResource _MedAppLightBlue}"
+                                WidthRequest="1"
+                                HeightRequest="1"
+                                HorizontalOptions="FillAndExpand"
+                                />
+                        <!--Email Address-->
+                        <Grid Style="{StaticResource _GridCols}">
+                            <Image
+                                    x:Name="_MessagesIcon"
+                                    Style="{StaticResource _ImageStyling}"
+                                    Grid.Column="0"
+                                    />
+                            <Label 
+                                    x:Name="_Email"
+                                    Text="Email Address"
+                                    Style="{StaticResource _CenterLabelStyling}"
+                                    Grid.Column="1"
+                                    />
+                            <Label 
+                                    Style="{StaticResource _LabelArrow}"
+                                    IsVisible="False"
+                                    />
+                        </Grid>
+                        <!--Phone-->
+                        <Grid Style="{StaticResource _GridCols}">
+                            <Image
+                                    x:Name="_PhoneNoIcon"
+                                    Style="{StaticResource _ImageStyling}"
+                                    Grid.Column="0"
+                                    />
+                            <Label 
+                                    x:Name="_PhoneNo"
+                                    Text="Phone Number"
+                                    Style="{StaticResource _CenterLabelStyling}"
+                                    Grid.Column="1"
+                                    />
+                            <Label 
+                                    Style="{StaticResource _LabelArrow}"
+                                    IsVisible="False"
+                                    />
+                        </Grid>
+                        <!--Username-->
+                        <Grid Style="{StaticResource _GridCols}" IsVisible="False">
+                            <Image
+                                    x:Name="_UsernameIcon"
+                                    Style="{StaticResource _ImageStyling}"
+                                    Grid.Column="0"
+                                    />
+                            <Label 
+                                    Text="Username"
+                                    Style="{StaticResource _CenterLabelStyling}"
+                                    Grid.Column="1"
+                                    />
+                            <Label 
+                                    Style="{StaticResource _LabelArrow}"
+                                    IsVisible="False"
+                                    />
+                        </Grid>
+                        <!--Full Name-->
+                        <Grid Style="{StaticResource _GridCols}">
+                            <Image
+                                    x:Name="_FullNameIcon"
+                                    Style="{StaticResource _ImageStyling}"
+                                    Grid.Column="0"
+                                    />
+                            <Label 
+                                    x:Name="_FullName"
+                                    Text="Full Name"
+                                    Style="{StaticResource _CenterLabelStyling}"
+                                    Grid.Column="1"
+                                    />
+                            <Label 
+                                    Style="{StaticResource _LabelArrow}"
+                                    IsVisible="False"
+                                    />
+                        </Grid>
+                        <!--Date of Birth-->
+                        <Grid Style="{StaticResource _GridCols}">
+                            <Image 
+                                    x:Name="_DOBIcon"
+                                    Style="{StaticResource _ImageStyling}"
+                                    Grid.Column="0"
+                                    />
+                            <Label 
+                                    x:Name="_DOB"
+                                    Text="Date of Birth"
+                                    Style="{StaticResource _CenterLabelStyling}"
+                                    Grid.Column="1"
+                                    />
+                            <Label 
+                                    Style="{StaticResource _LabelArrow}"
+                                    IsVisible="False"
+                                    />
+                        </Grid>
+                        <!--Bio Data-->
+                        <Grid Style="{StaticResource _GridCols}" ClassId="For-Doctor">
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="BioDataTapped"/>
+                            </Grid.GestureRecognizers>
+                            <Image 
+                                    x:Name="_BioIcon"
+                                    Style="{StaticResource _ImageStyling}"
+                                    Grid.Column="0"
+                                    />
+                            <Label 
+                                    Text="Bio Data"
+                                    Style="{StaticResource _CenterLabelStyling}"
+                                    Grid.Column="1"
+                                    />
+                            <Label 
+                                    Style="{StaticResource _LabelArrow}"
+                                    />
+                        </Grid>
+                        <!-- Security Settings -->
+                        <Label
+                                Text="Security Settings"
+                                TextColor="{StaticResource _MedAppLightBlue}"
+                                FontAttributes="Bold"
+                                HorizontalOptions="FillAndExpand"
+                                />
+                        <BoxView
+                                BackgroundColor="{StaticResource _MedAppLightBlue}"
+                                WidthRequest="1"
+                                HeightRequest="1"
+                                HorizontalOptions="FillAndExpand"
+                                />
+                        <!-- 2fa -->
+                        <Grid Style="{StaticResource _GridCols}">
+                            <Image 
+                                    x:Name="_2faIcon"
+                                    Style="{StaticResource _ImageStyling}"
+                                    Grid.Column="0"
+                                    />
+                            <Label 
+                                    Text="2fa"
+                                    Style="{StaticResource _CenterLabelStyling}"
+                                    Grid.Column="1"
+                                    />
+                            <Switch
+                                x:Name="_2faSwitch"
+                                IsToggled="False"
+                                HorizontalOptions="End"
+                                HeightRequest="20"
+                                Grid.Column="2"
+                                />
+                            <!--<Label 
+                                    Style="{StaticResource _LabelArrow}"
+                                    />-->
+                        </Grid>
+
+                        <!-- Change Password -->
+                        <Grid Style="{StaticResource _GridCols}">
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="ChangePasswordTapped"/>
+                            </Grid.GestureRecognizers>
+                            <Image 
+                                    x:Name="_ChangePasswordIcon"
+                                    Style="{StaticResource _ImageStyling}"
+                                    Grid.Column="0"
+                                    />
+                            <Label 
+                                    Text="Edit Profile"
+                                    Style="{StaticResource _CenterLabelStyling}"
+                                    Grid.Column="1"
+                                    />
+                            <Label 
+                                    Style="{StaticResource _LabelArrow}"
+                                    />
+                        </Grid>
+
+                        <!-- Account Settings -->
+                        <Label
+                                Text="Account Settings"
+                                TextColor="{StaticResource _MedAppLightBlue}"
+                                FontAttributes="Bold"
+                                HorizontalOptions="FillAndExpand"
+                                />
+                        <BoxView
+                                BackgroundColor="{StaticResource _MedAppLightBlue}"
+                                WidthRequest="1"
+                                HeightRequest="1"
+                                HorizontalOptions="FillAndExpand"
+                                />
+                        <!-- Facebook -->
+                        <Grid Style="{StaticResource _GridCols}">
+                            <Image 
+                                    x:Name="_FbIcon"
+                                    Style="{StaticResource _ImageStyling}"
+                                    Grid.Column="0"
+                                    />
+                            <Label 
+                                    Text="Facebook"
+                                    Style="{StaticResource _CenterLabelStyling}"
+                                    Grid.Column="1"
+                                    />
+                            <Label 
+                                    Style="{StaticResource _LabelArrow}"
+                                    />
+                        </Grid>
+
+                        <!-- Twitter -->
+                        <Grid Style="{StaticResource _GridCols}">
+                            <Image 
+                                    x:Name="_TwitterIcon"
+                                    Style="{StaticResource _ImageStyling}"
+                                    Grid.Column="0"
+                                    />
+                            <Label 
+                                    Text="Twitter"
+                                    Style="{StaticResource _CenterLabelStyling}"
+                                    Grid.Column="1"
+                                    />
+                            <Label 
+                                    Style="{StaticResource _LabelArrow}"
+                                    />
+                        </Grid>
+
+                        <!-- Speciality and Hospital Name -->
+                        <Grid Style="{StaticResource _GridCols}"
+                              ClassId="For-Doctor"
+                              >
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="SetSpecialityAndHospitalName"/>
+                            </Grid.GestureRecognizers>
+                            <Image 
+                                    Style="{StaticResource _ImageStyling}"
+                                    Grid.Column="0"
+                                    />
+                            <Label 
+                                    Text="Speciality and Hospital Name"
+                                    Style="{StaticResource _CenterLabelStyling}"
+                                    Grid.Column="1"
+                                    />
+                            <Label 
+                                    Style="{StaticResource _LabelArrow}"
+                                    />
+                        </Grid>
+
+                        <!-- Bank Details -->
+                        <Grid Style="{StaticResource _GridCols}"
+                              ClassId="For-Doctor"
+                              >
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="SetTimeAndBankDetails"/>
+                            </Grid.GestureRecognizers>
+                            <Image 
+                                    Style="{StaticResource _ImageStyling}"
+                                    Grid.Column="0"
+                                    />
+                            <Label 
+                                    Text="Bank Details"
+                                    Style="{StaticResource _CenterLabelStyling}"
+                                    Grid.Column="1"
+                                    />
+                            <Label 
+                                    Style="{StaticResource _LabelArrow}"
+                                    />
+                        </Grid>
+
+                        <!-- Consultation Price -->
+                        <Grid Style="{StaticResource _GridCols}"
+                              ClassId="For-Doctor"
+                              >
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="SetTimeAndBankDetails"/>
+                            </Grid.GestureRecognizers>
+                            <Image 
+                                    Style="{StaticResource _ImageStyling}"
+                                    Grid.Column="0"
+                                    />
+                            <Label 
+                                    Text="Consultation Price"
+                                    Style="{StaticResource _CenterLabelStyling}"
+                                    Grid.Column="1"
+                                    />
+                            <Label 
+                                    Style="{StaticResource _LabelArrow}"
+                                    />
+                        </Grid>
+
+                        <!-- Booking Time -->
+                        <Grid Style="{StaticResource _GridCols}"
+                              ClassId="For-Doctor"
+                              >
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="SetTimeAndBankDetails"/>
+                            </Grid.GestureRecognizers>
+                            <Image 
+                                    Style="{StaticResource _ImageStyling}"
+                                    Grid.Column="0"
+                                    />
+                            <Label 
+                                    Text="Booking Time"
+                                    Style="{StaticResource _CenterLabelStyling}"
+                                    Grid.Column="1"
+                                    />
+                            <Label 
+                                    Style="{StaticResource _LabelArrow}"
+                                    />
+                        </Grid>
+
+                        <Label
+                            x:Name="_OnlineForum"
+                            Style="{StaticResource _CenterLabelStyling}"
+                            TextColor="{StaticResource _MedAppBlack}"
+                            ClassId="For-Doctor"
+                            >
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="_OnlineForum_Tapped"/>
+                            </Label.GestureRecognizers>
+                            Online Forum
+                        </Label>
+                        <!-- Notification Settings -->
+                        <Label
+                            Text="Notification Settings"
+                            TextColor="{StaticResource _MedAppLightBlue}"
+                            FontAttributes="Bold"
+                            HorizontalOptions="FillAndExpand"
+                            ClassId="For-User"
+                            />
+                        <BoxView
+                            BackgroundColor="{StaticResource _MedAppLightBlue}"
+                            WidthRequest="1"
+                            HeightRequest="1"
+                            HorizontalOptions="FillAndExpand"
+                            ClassId="For-User"
+                            />
+                        <Grid Style="{StaticResource _GridCols}"
+                              ClassId="For-User"
+                              >
+                            <Image
+                                Style="{StaticResource _ImageStyling}"
+                                Grid.Column="0"
+                                />
+                            <Label 
+                                Text="Followed Doctor"
+                                Style="{StaticResource _CenterLabelStyling}"
+                                Grid.Column="1"
+                                />
+                            <Label 
+                                Style="{StaticResource _LabelArrow}"
+                                />
+                        </Grid>
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+        </Frame>
+        <Frame
+            x:Name="_ForIOS"
+            CornerRadius="0"
+            BackgroundColor="{StaticResource _MedAppChatBackground}"
+            VerticalOptions="End"
+            HeightRequest="20"
+            Padding="0"
+            />
+        <AbsoluteLayout
+            x:Name="_ForUWP"
+            HorizontalOptions="Start"
+            VerticalOptions="Start"
+            Margin="30,30,0,0"
+            IsVisible="False"
+            >
+            <Grid>
+                <images:CircleImage
+                    x:Name="_ProfilePic"
+                    Aspect="AspectFill"
+                    BorderColor="White"
+                    BorderThickness="1"
+                    HeightRequest="100"
+                    WidthRequest="100"
+                    />
+                <Label
+                    Text="Tap to change"
+                    FontSize="12"
+                    TextColor="{StaticResource _MedAppLightBlue}"
+                    HeightRequest="100"
+                    WidthRequest="100"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    VerticalOptions="Center"
+                    VerticalTextAlignment="Center"
+                    >
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="UpdateProfileLabelTapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </Grid>
+        </AbsoluteLayout>
+    </Grid>
+</ContentPage>

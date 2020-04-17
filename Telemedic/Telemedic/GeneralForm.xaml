@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Telemedic.GeneralForm">
+    <StackLayout
+        VerticalOptions="StartAndExpand"
+        Orientation="Vertical"
+        Margin="25"
+        >
+        <Label
+            Text="Enter Your Email"
+            FontSize="18"
+            FontAttributes="Bold"
+            />
+        <Entry
+            x:Name="_Email"
+            Placeholder="abc@xyz.com"
+            HorizontalOptions="FillAndExpand"
+            Keyboard="Email"
+            />
+        <Label
+            Text="Enter Mobile Number"
+            FontSize="18"
+            FontAttributes="Bold"
+            />
+        <Grid
+            HorizontalOptions="FillAndExpand"
+            >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".2*"/>
+                <ColumnDefinition Width=".8*"/>
+            </Grid.ColumnDefinitions>
+            <Picker
+                x:Name="_CountryCode"
+                HorizontalOptions="FillAndExpand"
+                Focused="_CountryCode_Focused"
+                Unfocused="_CountryCode_Focused"
+                Grid.Column="0"
+            />
+            <Entry
+                x:Name="_PhoneNo"
+                Placeholder="Enter Phone No"
+                Keyboard="Telephone"
+                HorizontalOptions="FillAndExpand"
+                Grid.Column="1"
+                />
+        </Grid>
+        <Label
+            Text="Enter Password"
+            FontSize="18"
+            FontAttributes="Bold"
+            />
+        <Entry
+            x:Name="_Password"
+            HorizontalOptions="FillAndExpand"
+            IsPassword="true"
+            Placeholder="Enter password"
+            />
+        <Label
+            Text="Re-Enter Password"
+            FontSize="18"
+            FontAttributes="Bold"
+            />
+        <Entry
+            x:Name="_ConfirmPassword"
+            HorizontalOptions="FillAndExpand"
+            IsPassword="true"
+            Placeholder="Confirm password"
+            />
+        <StackLayout
+            HorizontalOptions="End"
+            >
+            <Button
+                x:Name="_Submit"
+                Text="NEXT"
+                TextColor="White"
+                BackgroundColor="{StaticResource _MedAppLightBlue}"
+                WidthRequest="120"
+                BorderRadius="7"
+                Clicked="_Submit_Clicked"
+                />
+        </StackLayout>
+
+    </StackLayout>
+</ContentPage>

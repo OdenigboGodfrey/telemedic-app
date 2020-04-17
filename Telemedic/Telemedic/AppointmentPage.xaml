@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Telemedic.AppointmentPage"
+             Title="Appointment">
+    <ContentPage.Content>
+        <StackLayout 
+            VerticalOptions="FillAndExpand"
+            Padding="5"
+            >
+
+            <StackLayout Margin="10"
+                         VerticalOptions="CenterAndExpand">
+
+                <StackLayout
+                    Orientation="Vertical">
+                    <!--Doctor-->
+                    <Frame 
+                        x:Name="FrameExtContainer" 
+                        Padding="1" HasShadow="False" 
+                        HorizontalOptions="FillAndExpand" 
+                        CornerRadius="5" 
+                        OutlineColor="{StaticResource colorBlue}" 
+                        BackgroundColor="{StaticResource colorBlue}"
+                        >
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizerDoc" />
+                        </Frame.GestureRecognizers>
+                        <Frame 
+                            x:Name="FrameIntContainer" 
+                            Padding="5" 
+                            HasShadow="False" 
+                            HorizontalOptions="FillAndExpand" 
+                            CornerRadius="5" 
+                            OutlineColor="Black" 
+                            BackgroundColor="{StaticResource _MedAppChatBackground}">
+                            <Grid
+                                Margin="0, 10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width=".8*"/>
+                                    <ColumnDefinition Width=".2*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                Tapped="TapGestureRecognizerDoc"
+                                />
+                                </Grid.GestureRecognizers>
+                                <Label
+                                    Text="Doctors"
+                                    TextColor="{StaticResource colorBlue}"
+                                    HorizontalOptions="FillAndExpand"
+                                    HorizontalTextAlignment="Center"
+                                    VerticalTextAlignment="Center"
+                                    FontSize="Large"
+                                    Grid.Column="0"
+                                    Grid.Row="0"
+                                    />
+                                <Image 
+                                    x:Name="icon_doctor"
+                                    Aspect="AspectFit"
+                                    WidthRequest="100"
+                                    Grid.Column="1"
+                                    Grid.Row="0"
+                                    />
+                                <Label
+                                    Text="Search Doctors by their specialty, city or Next to you."
+                                    Grid.Row="1"
+                                    />
+                            </Grid>
+                        </Frame>
+                    </Frame>
+
+                    <!--Pharmacy-->
+                    <Frame 
+                        Padding="1" HasShadow="False" 
+                        HorizontalOptions="FillAndExpand" 
+                        CornerRadius="5" 
+                        OutlineColor="{StaticResource colorBlue}" 
+                        BackgroundColor="{StaticResource colorBlue}"
+                        >
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizerPhar" />
+                        </Frame.GestureRecognizers>
+                        <Frame 
+                            Padding="5" 
+                            HasShadow="False" 
+                            HorizontalOptions="FillAndExpand" 
+                            CornerRadius="5" 
+                            OutlineColor="Black" 
+                            BackgroundColor="White" >
+                            <Grid
+                                Margin="0, 10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width=".8*"/>
+                                    <ColumnDefinition Width=".2*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Label
+                                    Text="Pharmacy"
+                                    TextColor="{StaticResource colorBlue}"
+                                    HorizontalOptions="FillAndExpand"
+                                    HorizontalTextAlignment="Center"
+                                    VerticalTextAlignment="Center"
+                                    FontSize="Large"
+                                    Grid.Column="0"
+                                    Grid.Row="0"
+                                    />
+                                <Image 
+                                    x:Name="icon_pharmacy"
+                                   Aspect="AspectFit"
+                                   WidthRequest="100"
+                                   Grid.Column="1"
+                                    Grid.Row="0"
+                                   />
+                                <Label
+                                    Text="Search Pharmacies by Location, City, and Alphabetically."
+                                    Grid.Row="1"
+                                    />
+                            </Grid>
+                        </Frame>
+                    </Frame>
+
+                    <!--Laboratory-->
+                    <Frame 
+                        Padding="1" HasShadow="False" 
+                        HorizontalOptions="FillAndExpand" 
+                        CornerRadius="5" 
+                        OutlineColor="{StaticResource colorBlue}" 
+                        BackgroundColor="{StaticResource colorBlue}"
+                        >
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizerLab" />
+                        </Frame.GestureRecognizers>
+                        <Frame 
+                            Padding="5" 
+                            HasShadow="False" 
+                            HorizontalOptions="FillAndExpand" 
+                            CornerRadius="5" 
+                            OutlineColor="Black" 
+                            BackgroundColor="{StaticResource _MedAppChatBackground}">
+                            <Grid
+                                Margin="0, 10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width=".8*"/>
+                                    <ColumnDefinition Width=".2*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Label
+                                    Text="Laboratory"
+                                    TextColor="{StaticResource colorBlue}"
+                                    HorizontalOptions="FillAndExpand"
+                                    HorizontalTextAlignment="Center"
+                                    VerticalTextAlignment="Center"
+                                    FontSize="Large"
+                                    Grid.Column="0"
+                                    Grid.Row="0"
+                                    />
+                                <Image 
+                                    x:Name="icon_lab"
+                                   Aspect="AspectFit"
+                                   WidthRequest="100"
+                                   Grid.Column="1"
+                                    Grid.Row="0"
+                                   />
+                                <Label
+                                    Text="Search Laboratories by Location, City, and Alphabetically."
+                                    Grid.Row="1"
+                                    />
+                            </Grid>
+                        </Frame>
+                    </Frame>
+
+                    <!--Hospital-->
+                    <Frame 
+                        Padding="1" HasShadow="False" 
+                        HorizontalOptions="FillAndExpand" 
+                        CornerRadius="5" 
+                        OutlineColor="{StaticResource colorBlue}" 
+                        BackgroundColor="{StaticResource colorBlue}"
+                        >
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizerHos" />
+                        </Frame.GestureRecognizers>
+                        <Frame 
+                            Padding="5" 
+                            HasShadow="False" 
+                            HorizontalOptions="FillAndExpand" 
+                            CornerRadius="5" 
+                            OutlineColor="Black" 
+                            BackgroundColor="White" >
+                            <Grid
+                                Margin="0, 10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width=".8*"/>
+                                    <ColumnDefinition Width=".2*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Label
+                                    Text="Hospital"
+                                    TextColor="{StaticResource colorBlue}"
+                                    HorizontalOptions="FillAndExpand"
+                                    HorizontalTextAlignment="Center"
+                                    VerticalTextAlignment="Center"
+                                    FontSize="Large"
+                                    Grid.Column="0"
+                                    Grid.Row="0"
+                                    />
+                                <Image 
+                                    x:Name="icon_hospital"
+                                    Aspect="AspectFit"
+                                    WidthRequest="100"
+                                    Grid.Column="1"
+                                    Grid.Row="0"
+                                    />
+                                <Label
+                                    Text="Search Hospital by Location, City, or Alphabetically."
+                                    Grid.Row="1"
+                                    />
+                            </Grid>
+                        </Frame>
+                    </Frame>
+
+                </StackLayout>
+
+            </StackLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

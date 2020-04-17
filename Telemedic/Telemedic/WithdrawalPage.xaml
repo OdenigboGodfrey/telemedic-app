@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Telemedic"
+             x:Class="Telemedic.WithdrawalPage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Primary" Priority="1" Name="_Balance" Text="Bal:200$" />
+    </ContentPage.ToolbarItems>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <!--<Label
+            x:Name="_Balance"
+            Text="Bal:200$"
+            WidthRequest="200"
+            HorizontalOptions="End"
+            VerticalTextAlignment="Center"
+            BackgroundColor="{StaticResource _MedAppBlack}"
+            TextColor="White"
+            Grid.Row="0"
+            Margin="0,3,0,0"
+            />-->
+        <Frame
+            Style="{StaticResource _FrameContainer}"
+            Padding="3"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            Grid.Row="1"
+            >
+            <StackLayout 
+                Orientation="Vertical"
+                HorizontalOptions="Center"
+                VerticalOptions="FillAndExpand"
+                WidthRequest="320"
+                >
+                <Label
+                    Text="ENTER AMOUNT"
+                    TextColor="{StaticResource _MedAppLightBlue}"
+                    HorizontalTextAlignment="Start"
+                    FontAttributes="Bold"
+                    />
+                <local:CustomEntry
+                    x:Name="_Amount"
+                    Placeholder="0.00"
+                    Keyboard="Numeric"
+                    HorizontalOptions="FillAndExpand"
+                    TextChanged="_Amount_TextChanged">
+
+                </local:CustomEntry>
+                <Button
+                    x:Name="_Submit"
+                    Text="SUBMIT"
+                    Style="{StaticResource _MedAppButtonTextTemplate}"
+                    BackgroundColor="{StaticResource _MedAppAsh}"
+                    Clicked="_Submit_Clicked"
+                    />
+            </StackLayout>
+        </Frame>
+    </Grid>
+</ContentPage>

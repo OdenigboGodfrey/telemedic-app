@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Telemedic.AuthorizationPinPage">
+    <Grid
+        HorizontalOptions="FillAndExpand"
+        VerticalOptions="FillAndExpand"
+        >
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".2*"/>
+            <RowDefinition Height=".6*"/>
+            <RowDefinition Height=".2*"/>
+        </Grid.RowDefinitions>
+        <Frame
+            BorderColor="{StaticResource _MedAppAsh}"
+            HasShadow="True"
+            BackgroundColor="#030303"
+            WidthRequest="150"
+            HeightRequest="150"
+            Padding="5"
+            CornerRadius="0"
+            Grid.Row="1"
+            Margin="50"
+            >
+            <Grid
+                x:Name="_ParentGrid"
+                >
+                <StackLayout
+                    Orientation="Vertical"
+                    ClassId="For-User"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    Padding="20"
+                    >
+                    <Label
+                        x:Name="_UserAuthorizationLabel"
+                        Text="Enter password to generate pin"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        Margin="0,15,0,0"
+                        />
+                    <Entry
+                        x:Name="_UserAuthorizationPin"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center"
+                        Margin="0,15,0,0"
+                        />
+                    <Button 
+                        Text="GENERATE"
+                        Style="{StaticResource _MedAppButtonTextTemplate}"
+                        BackgroundColor="{StaticResource _MedAppLightBlue}"
+                        HorizontalOptions="End"
+                        VerticalOptions="EndAndExpand"
+                        Clicked="_UserSubmit_Clicked"
+                        Padding="5"
+                        />
+                </StackLayout>
+                <StackLayout
+                    Orientation="Vertical"
+                    ClassId="For-Doctor"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    >
+                    <Label
+                        x:Name="_DoctorAuthorizationLabel"
+                        Text="Enter pin"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        Margin="0,5,0,0"
+                        />
+                    <Grid
+                        Margin="0,10,0,0"
+                        >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Entry
+                            x:Name="_DoctorAuthorizationPin1"
+                            HorizontalOptions="StartAndExpand"
+                            Grid.Column="0"
+                            />
+                        <Entry
+                            x:Name="_DoctorAuthorizationPin2"
+                            HorizontalOptions="StartAndExpand"
+                            Grid.Column="1"
+                            />
+                        <Entry
+                            x:Name="_DoctorAuthorizationPin3"
+                            HorizontalOptions="StartAndExpand"
+                            Grid.Column="2"
+                            />
+                        <Entry
+                            x:Name="_DoctorAuthorizationPin4"
+                            HorizontalOptions="StartAndExpand"
+                            Grid.Column="3"
+                            />
+                    </Grid>
+
+                    <Button 
+                        x:Name="_DoctorSubmit"
+                        Text="SEND"
+                        Style="{StaticResource _MedAppButtonTextTemplate}"
+                        BackgroundColor="{StaticResource _MedAppLightBlue}"
+                        HorizontalOptions="End"
+                        VerticalOptions="End"
+                        Clicked="_DoctorSubmit_Clicked"
+                        Margin="0,10,0,0"
+                        Padding="5"
+                        />
+                </StackLayout>
+            </Grid>
+        </Frame>
+    </Grid>
+    
+</ContentPage>

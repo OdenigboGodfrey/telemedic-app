@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Doctor Profile"
+             x:Class="Telemedic.DoctorProfile">
+    <ScrollView>
+        <StackLayout
+            VerticalOptions="FillAndExpand"
+            >
+            <Grid
+                Margin="10, 10"
+                >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*"/>
+                    <ColumnDefinition Width="50*"/>
+                </Grid.ColumnDefinitions>
+                <StackLayout 
+                    Orientation="Vertical" 
+                    Grid.Column="0"
+                    >
+                    <Label
+                        x:Name="_DoctorName"
+                        Text="Dr Silas Ogar"
+                        TextColor="{StaticResource colorBlue}"
+                        FontSize="22"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalTextAlignment="Center"
+                        TextDecorations="Underline"
+                        />
+                    <Label 
+                        x:Name="_Address"
+                        Text="30 Wethral Rd, Owerri, Imo State."
+                        FontSize="Default"
+                        TextColor="Black"
+                        />
+                    <Label 
+                        Text="Rating"
+                        FontSize="22"
+                        TextColor="{StaticResource colorBlue}"
+                        FontAttributes="Bold"
+                        />
+                    <StackLayout 
+                        x:Name="_StarsStack" 
+                        Orientation="Horizontal"
+                        ></StackLayout>
+                </StackLayout>
+
+                <StackLayout 
+                    Orientation="Vertical"
+                    Grid.Column="1"
+                    Margin="0"
+                    Spacing="0"
+                    >
+                    <Image 
+                        x:Name="dp_doctor"
+                        Aspect="AspectFit"
+                        WidthRequest="100"
+                        />
+                    <Label
+                        Text="Location"
+                        TextColor="{StaticResource colorBlue}"
+                        FontSize="16"
+                        HorizontalTextAlignment="Center"
+                        />
+                    <Label
+                        x:Name="_Location"
+                        TextColor="{StaticResource colorBlue}"
+                        FontSize="16"
+                        HorizontalTextAlignment="Center"
+                        />
+                </StackLayout>
+            </Grid>
+            
+            <StackLayout 
+                Orientation="Horizontal" 
+                BackgroundColor="{StaticResource _MedAppLightBlue}"
+                Padding="5"
+                HorizontalOptions="FillAndExpand"
+                >
+                <Image
+                    x:Name="_ClockIcon"
+                    Aspect="AspectFit"
+                    WidthRequest="30"
+                    HeightRequest="30"
+                    />
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                    </Grid.RowDefinitions>
+                    <Label
+                        Text="Timing"
+                        TextColor="White"
+                        Grid.Row="0"
+                        />
+                    <Label
+                        x:Name="_WorkingTime"
+                        TextColor="White"
+                        Grid.Row="1"
+                        />
+                </Grid>
+                <Image
+                    x:Name="_DollarIcon"
+                    Aspect="AspectFit"
+                    WidthRequest="30"
+                    HeightRequest="30"
+                    Margin="20,0,0,0"
+                    />
+                <Grid HorizontalOptions="End">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                    </Grid.RowDefinitions>
+                    <Label
+                        Text="Fee"
+                        TextColor="White"
+                        Grid.Row="0"
+                        />
+                    <Label
+                        x:Name="_Fee"
+                        TextColor="White"
+                        Grid.Row="1"
+                        />
+                </Grid>
+            </StackLayout>
+            <Frame
+                Style="{StaticResource _FrameContainer}"
+                Margin="5"
+                >
+                <StackLayout
+                    Orientation="Vertical"
+                    >
+                    <Label 
+                        Text="SERVICES"
+                        FontSize="22"
+                        TextColor="{StaticResource colorBlue}"
+                        FontAttributes="Bold"
+                        HorizontalOptions="Center"
+                        />
+
+                    <Label 
+                        x:Name="_Description"
+                        Text="Nobody wants to become sick, disabled or helpless. Preventing sickness or injury is a better choice: It's less expensive, better for our health and we lose less income if we don't get sick too often. Preventive treatment is also important for society as a whole. Many people can't afford drugs, hospital stays or surgery. By offering preventive medicine and keeping people healthy, I reduce the health gap between rich and poor populations."
+                        TextColor="Black"
+                        />
+                    <Label 
+                        Text="FOLLOW"
+                        FontSize="22"
+                        TextColor="{StaticResource colorBlue}"
+                        FontAttributes="Bold"
+                        HorizontalOptions="Center"
+                        />
+                    <StackLayout
+                        Orientation="Horizontal"
+                        HorizontalOptions="EndAndExpand"
+                        >
+                        <Button 
+                            x:Name="_Blog"
+                            Text="BLOG"
+                            TextColor="White"
+                            BackgroundColor="{StaticResource colorBlue}"
+                            CornerRadius="10"
+                            HorizontalOptions="End"
+                            />
+                        <Button 
+                            x:Name="_Forum"
+                            Text="FORUM"
+                            TextColor="White"
+                            BackgroundColor="{StaticResource colorBlue}"
+                            CornerRadius="10"
+                            HorizontalOptions="End"
+                            />
+                    </StackLayout>
+
+                    <Label 
+                        Text="MISSION STATEMENT"
+                        FontSize="22"
+                        TextColor="{StaticResource colorBlue}"
+                        FontAttributes="Bold"
+                        HorizontalOptions="Center"
+                        />
+
+                    <Label 
+                        x:Name="_MissionStatement"
+                        Text="If nobody talks about you then you're no body stop existing and start living and start to feel what we feeling"
+                        TextColor="Black"
+                        />
+
+                    <StackLayout
+                        VerticalOptions="End"
+                        >
+                        <Button 
+                            x:Name="BtnBook"
+                            Text="BOOK APPOINTMENT"
+                            Style="{StaticResource blueButtons}"
+                            CornerRadius="20"
+                            Margin="0, 10, 0, 0"/>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+            
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Telemedic.BookAppointmentDoctor"
+             Title="Appointment"
+             >
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="0, 20, 0, 0" />
+        </OnPlatform>
+    </ContentPage.Padding>
+    
+    <StackLayout
+            VerticalOptions="FillAndExpand">
+        <Frame CornerRadius="0" BorderColor="Transparent" HasShadow="False">
+            <StackLayout Orientation="Vertical">
+                <Grid
+                    VerticalOptions="Start"
+                    >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1.2*"/>
+                        <ColumnDefinition Width=".8*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label
+                        x:Name="_Name"
+                        Text="Dr Silas Ogar"
+                        TextColor="{StaticResource colorBlue}"
+                        FontSize="Large"
+                        HorizontalOptions="Start"
+                        HorizontalTextAlignment="Start"
+                        VerticalTextAlignment="Center"
+                        TextDecorations="Underline"
+                        Grid.Column="0"
+                        />
+                    <Image 
+                        x:Name="dp_doctor"
+                        Aspect="AspectFit"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="Fill"
+                        HeightRequest="100"
+                        Grid.Column="1"
+                        />
+                </Grid>
+                <Label
+                    x:Name="_Address"
+                    Text="30 Wetheral Rd, Owerri, Imo State."
+                    TextColor="Black"
+                    />
+                <Label
+                    x:Name="_WorkTime"
+                    Text="08:00 AM to 08:00 PM"
+                    TextColor="Black"
+                    />
+            </StackLayout>
+        </Frame>
+
+        <Frame 
+            Margin="10, 20"
+            Style="{StaticResource _FrameContainer}"
+            Padding="0"
+            >
+            <ScrollView>
+                <StackLayout Margin="10">
+                    <Label 
+                        Text="CHOOSE A DATE"
+                        TextColor="{StaticResource colorBlue}"/>
+
+                    <DatePicker 
+                        x:Name="pickDate"
+                        Format="D"
+                        />
+
+                    <Label
+                        Text="TIME"
+                        TextColor="{StaticResource colorBlue}"
+                        />
+                    
+                    <TimePicker 
+                        x:Name="pickTime"
+                        Format="T"
+                        />
+
+                    <Label 
+                        Text="ENTER MOBILE NUMBER"
+                        TextColor="{StaticResource colorBlue}"/>
+                    <StackLayout 
+                        Orientation="Horizontal"
+                        HorizontalOptions="FillAndExpand"
+                         >
+                        <Picker
+                            x:Name="_CountryCode"
+                            />
+                        <Entry
+                            x:Name="_UserNo"
+                            HorizontalOptions="FillAndExpand"
+                            Keyboard="Telephone"
+                            />
+                    </StackLayout>
+
+                    <Label 
+                        Text="DESCRIPTION OF PROBLEM"
+                        TextColor="{StaticResource colorBlue}"
+                        Margin="0, 5"/>
+                    <Editor 
+                        x:Name="_Description"
+                        Placeholder="What is wrong with you?"
+                        HeightRequest="100"
+                        HorizontalOptions="FillAndExpand"
+                        />
+
+                    <!--<Label
+                        Text="NOTES"
+                        TextColor="{StaticResource colorBlue}"/>
+
+                    <Editor
+                        x:Name="_Notes"
+                        HorizontalOptions="FillAndExpand"
+                        HeightRequest="100"
+                        />-->
+
+                    <StackLayout
+                        VerticalOptions="End"
+                        Margin="20, 10">
+                        <Button 
+                            x:Name="BtnBook"
+                            Text="BOOK APPOINTMENT"
+                           Style="{StaticResource blueButtons}"
+                            CornerRadius="20"
+                            Margin="10, 10"
+                            Clicked="HandleBooking"/>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </Frame>
+    </StackLayout>
+</ContentPage>

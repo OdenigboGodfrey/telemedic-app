@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Telemedic.MedPractWorkSettings">
+    <ScrollView>
+        <StackLayout
+            Orientation="Vertical"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            Margin="25"
+            >
+            <Frame
+                CornerRadius="0"
+                HasShadow="True"
+                BorderColor="{StaticResource _MedAppAsh}"
+                >
+                <Label
+                    Text="SET BOOKING TIME, ACCOUNT DETAILS AND CONSULTATION PRICE"
+                    TextColor="{StaticResource _MedAppLightBlue}"
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    HorizontalTextAlignment="Center"
+                    />
+            </Frame>
+            <Label
+                Text="CONSULTATION PRICE"
+                HorizontalTextAlignment="Start"
+                FontAttributes="Bold"
+                />
+            <Entry
+                x:Name="_Price"
+                Placeholder="Enter Consultation Price"
+                HorizontalOptions="FillAndExpand"
+                Keyboard="Numeric"
+                />
+            <Label
+            Text="FROM"
+            HorizontalTextAlignment="Start"
+            FontAttributes="Bold"
+            />
+            <TimePicker
+            x:Name="_StartTime"
+            HorizontalOptions="FillAndExpand"
+            />
+            <Label
+            Text="TO"
+            HorizontalTextAlignment="Start"
+            FontAttributes="Bold"
+            />
+            <TimePicker
+            x:Name="_EndTime"
+            HorizontalOptions="FillAndExpand"
+            />
+            <Label
+            Text="ACCOUNT DETAILS"
+            FontAttributes="Bold"
+            />
+            <Entry
+            x:Name="_AccountName"
+            HorizontalOptions="FillAndExpand"
+            Placeholder="Enter Account Name"
+            />
+            <Entry
+            x:Name="_AccountNumber"
+            HorizontalOptions="FillAndExpand"
+            Placeholder="Enter Account Number"
+            Keyboard="Numeric"
+            />
+            <Entry
+            x:Name="_BankName"
+            HorizontalOptions="FillAndExpand"
+            Placeholder="Enter Bank Name"
+            />
+            <Button
+            x:Name="_Submit"
+            Text="SUBMIT"
+            CornerRadius="5"
+            BackgroundColor="{StaticResource _MedAppLightBlue}"
+            Style="{StaticResource _MedAppButtonTextTemplate}"
+            Clicked="_Submit_Clicked"
+            />
+        </StackLayout>
+    </ScrollView>
+    
+</ContentPage>

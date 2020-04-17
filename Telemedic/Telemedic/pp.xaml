@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Telemedic.pp"
+             xmlns:images="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             >
+    <ContentPage.Resources>
+        <Style x:Key="_GridCols" TargetType="Grid">
+            <Setter Property="Grid.ColumnDefinitions">
+                <Setter.Value>
+                    <ColumnDefinitionCollection>
+                        <ColumnDefinition Width=".1*"/>
+                        <ColumnDefinition Width=".7*"/>
+                        <ColumnDefinition Width=".2*"/>
+                    </ColumnDefinitionCollection>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Margin" Value="2"/>
+        </Style>
+        <Style x:Key="_ImageStyling" TargetType="Image">
+            <Setter Property="WidthRequest" Value="25"/>
+            <Setter Property="HeightRequest" Value="25"/>
+            <Setter Property="Aspect" Value="AspectFit"/>
+        </Style>
+        <Style x:Key="_LabelStyling" TargetType="Label">
+            <Setter Property="HorizontalTextAlignment" Value="Start"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="TextColor" Value="{StaticResource _MedAppBlack}"/>
+        </Style>
+
+    </ContentPage.Resources>
+
+    <Grid
+        x:Name="_ParentGrid"
+        >
+        <Button
+            Text="Send"
+            Clicked="Button_Clicked"
+            />
+    </Grid>
+</ContentPage>

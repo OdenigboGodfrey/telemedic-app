@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Telemedic.DetailedWaitingPatient"
+             xmlns:image="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label" x:Key="_LabelStlye">
+                <Setter Property="TextColor" Value="{StaticResource _MedAppLightBlue}" />
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontSize" Value="Default"/>
+                <Setter Property="Margin" Value="5"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid
+        BackgroundColor="White"
+        >
+        <Frame
+            Style="{StaticResource _FrameContainer}"
+            Margin="25"
+            Padding="15"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            >
+            <StackLayout Orientation="Vertical">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width=".4*"/>
+                        <ColumnDefinition Width=".6*"/>
+                    </Grid.ColumnDefinitions>
+                    <image:CircleImage
+                        x:Name="_PatientPic"
+                        Aspect="AspectFill"
+                        Grid.Column="0"
+                        WidthRequest="150"
+                        HeightRequest="150"
+                        />
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Label
+                            x:Name="_PatientName"
+                            Text="Jendy Jasper"
+                            VerticalTextAlignment="End"
+                            Style="{StaticResource _LabelStlye}"
+                            Grid.Row="0"
+                            />
+                        <StackLayout 
+                            x:Name="_AcceptDeclineStack"
+                            Orientation="Horizontal"
+                            Grid.Row="1"
+                            >
+                            <Button
+                                x:Name="_Accept"
+                                Text="Accept"
+                                TextColor="White"
+                                BackgroundColor="{StaticResource colorGreen}"
+                                WidthRequest="80"
+                                Clicked="_Accept_Clicked"
+                                VerticalOptions="Center"
+                                />
+                            <Button
+                                x:Name="_Decline"
+                                Text="Decline"
+                                TextColor="White"
+                                BackgroundColor="{StaticResource colorRed}"
+                                WidthRequest="80"
+                                Margin="5,0,0,0"
+                                Clicked="_Decline_Clicked"
+                                VerticalOptions="Center"
+                                />
+                        </StackLayout>
+                    </Grid>
+                </Grid>
+                <Label
+                    Text="Time"
+                    Style="{StaticResource _LabelStlye}"
+                    />
+                <Label
+                    x:Name="_BookedTime"
+                    Text="9:00AM"
+                    />
+                <Label
+                    Text="Mobile Number"
+                    Style="{StaticResource _LabelStlye}"
+                    />
+                <Label
+                    x:Name="_PatientPhoneNo"
+                    Text="+2348097166302"
+                    />
+                <Label
+                    Text="Description"
+                    Style="{StaticResource _LabelStlye}"
+                    />
+                <ScrollView
+                    VerticalScrollBarVisibility="Default"
+                    >
+                    <Label
+                        x:Name="_Description"
+                        Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud."
+                        />
+                </ScrollView>
+                
+            </StackLayout>
+        </Frame>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Telemedic.OTPPage"
+             BackgroundColor="White"
+             >
+    <StackLayout 
+        Orientation="Vertical"
+        Margin="25"
+        VerticalOptions="Center"
+         >
+        <Label
+            Text="Enter OTP"
+            FontSize="20"
+            />
+        <Grid
+            x:Name="_VerificationEntryGrid"
+            HorizontalOptions="StartAndExpand"
+            >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Entry
+                x:Name="_VerificationEntry1"
+                Grid.Column="0"
+                HorizontalOptions="Center"
+                FontAttributes="Bold"
+                Keyboard="Numeric"
+                MaxLength="1"
+                TextChanged="_VerificationEntry_TextChanged"
+                />
+            <Entry
+                x:Name="_VerificationEntry2"
+                Grid.Column="1"
+                HorizontalOptions="Center"
+                FontAttributes="Bold"
+                Keyboard="Numeric"
+                MaxLength="1"
+                TextChanged="_VerificationEntry_TextChanged"
+                />
+            <Entry
+                x:Name="_VerificationEntry3"
+                Grid.Column="2"
+                HorizontalOptions="Center"
+                FontAttributes="Bold"
+                Keyboard="Numeric"
+                MaxLength="1"
+                TextChanged="_VerificationEntry_TextChanged"
+                />
+            <Entry
+                x:Name="_VerificationEntry4"
+                Grid.Column="3"
+                HorizontalOptions="Center"
+                FontAttributes="Bold"
+                Keyboard="Numeric"
+                MaxLength="1"
+                TextChanged="_VerificationEntry_TextChanged"
+                />
+        </Grid>
+        <Frame
+            BorderColor="Black"
+            HasShadow="true"
+            BackgroundColor="#CCCCCC"
+            Padding="20"
+            Margin="0,10,0,10"
+            >
+            <Label
+                Text="Check your message for your one time password, if you do not receive it in 15 minutes, you may kindly try again or contact support for assistance"
+            />
+        </Frame>
+        <StackLayout Orientation="Horizontal" Margin="10">
+            <Button
+                x:Name="_ResendOTP"
+                Text="Resend OTP"
+                TextColor="{StaticResource _MedAppLightBlue}"
+                HorizontalOptions="Start"
+                Clicked="_ResendOTP_Clicked"
+                BackgroundColor="White"
+                FontAttributes="Bold"
+                FontSize="Medium"
+                IsEnabled="False"
+                />
+            <Button
+                x:Name="_VerifyOTP"
+                Text="Verify"
+                TextColor="{StaticResource _MedAppLightBlue}"
+                HorizontalOptions="EndAndExpand"
+                Clicked="_VerifyOTP_Clicked"
+                BackgroundColor="White"
+                FontAttributes="Bold"
+                FontSize="Medium"
+                IsEnabled="False"
+                />
+        </StackLayout>
+        <Grid
+            HorizontalOptions="Center"
+            Margin="10"
+            >
+            <Label
+                x:Name="_ResendOTPCounter"
+                HorizontalTextAlignment="Start"
+                HorizontalOptions="Start"
+                TextColor="Black"
+                />
+        </Grid>
+    </StackLayout>
+</ContentPage>

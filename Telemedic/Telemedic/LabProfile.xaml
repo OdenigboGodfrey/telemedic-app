@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Lab Profile"
+             x:Class="Telemedic.LabProfile">
+    <ScrollView>
+        <StackLayout
+                    Margin="20"
+            VerticalOptions="FillAndExpand">
+            <Grid
+                        Margin="10, 10"
+                        >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*"/>
+                    <ColumnDefinition Width="50*"/>
+                </Grid.ColumnDefinitions>
+                <Label
+                            Text="St John's Lab Ltd."
+                            TextColor="{StaticResource colorBlue}"
+                            FontSize="Large"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalTextAlignment="Center"
+                            TextDecorations="Underline"
+                            Grid.Column="0"
+                            />
+                <Image x:Name="dp_lab"
+                               Aspect="AspectFit"
+                               WidthRequest="100"
+                               Grid.Column="1"
+                               />
+
+                <Label 
+                            Text="38, M.C.C Rd, Owerri, Imo State."
+                            FontSize="Small"
+                            TextColor="Black"
+                            Grid.Column="0"
+                            Grid.Row="1"/>
+
+                <Label 
+                            Text="Rating"
+                            FontSize="Large"
+                            TextColor="{StaticResource colorBlue}"
+                            FontAttributes="Bold"
+                            Grid.Column="0"
+                            Grid.Row="2"/>
+            </Grid>
+
+            <Label 
+                Text="SERVICES"
+                FontSize="Large"
+                TextColor="{StaticResource colorBlue}"
+                FontAttributes="Bold"
+                HorizontalOptions="End"/>
+
+            <Label 
+                Text="Nobody wants to become sick, disabled or helpless. 
+Preventing sickness or injury is a better choice: 
+It's less expensive, better for our health and we 
+lose less income if we don't get sick too often."
+                TextColor="Black"/>
+
+            <Label 
+                Text="FOLLOW"
+                FontSize="Large"
+                TextColor="{StaticResource colorBlue}"
+                FontAttributes="Bold"
+                HorizontalOptions="End"/>
+
+            <StackLayout
+                Orientation="Horizontal"
+                HorizontalOptions="CenterAndExpand">
+                <Button 
+                    Text="BLOG"
+                    TextColor="White"
+                    BackgroundColor="{StaticResource colorBlue}"
+                    CornerRadius="10"/>
+                <Button 
+                    Text="FORUM"
+                    TextColor="White"
+                    BackgroundColor="{StaticResource colorBlue}"
+                    CornerRadius="10"/>
+            </StackLayout>
+
+            <Label 
+                Text="MISSION STATEMENT"
+                FontSize="Large"
+                TextColor="{StaticResource colorBlue}"
+                FontAttributes="Bold"
+                HorizontalOptions="End"/>
+
+            <Label 
+                Text="If nobody talks about you then you're no body
+                stop existing and start living and start to feel what we feeling"
+                TextColor="Black"/>
+
+            <StackLayout
+                VerticalOptions="End" >
+                <Button 
+                        x:Name="BtnBook"
+                        Text="BOOK APPOINTMENT"
+                       Style="{StaticResource blueButtons}"
+                        CornerRadius="20"
+                        Margin="0, 10, 0, 0"/>
+            </StackLayout>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

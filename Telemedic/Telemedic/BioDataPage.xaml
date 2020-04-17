@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Telemedic.BioDataPage">
+    <Frame
+        HasShadow="True"
+        BorderColor="{StaticResource _MedAppAsh}"
+        Margin="25"
+        HeightRequest="300"
+        >
+        <StackLayout
+            Orientation="Vertical"
+            >
+            <Label
+                Text="Bio Data"
+                TextColor="{StaticResource _MedAppLightBlue}"
+                FontSize="Large"
+                HorizontalTextAlignment="Center"
+                />
+            <Editor
+                x:Name="_BioContent"
+                Placeholder="Enter Your Bio Data Here"
+                PlaceholderColor="{StaticResource _MedAppLightBlue}"
+                HorizontalOptions="FillAndExpand"
+                HeightRequest="100"
+                />
+            <Button
+                x:Name="_Submit"
+                Text="SUBMIT"
+                Style="{StaticResource _MedAppButtonTextTemplate}"
+                BackgroundColor="{StaticResource _MedAppLightBlue}"
+                Clicked="_Submit_Clicked"
+                />
+        </StackLayout>
+    </Frame>
+</ContentPage>

@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Telemedic.SecondaryMainPage"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             >
+    <Grid
+        HorizontalOptions="FillAndExpand"
+        VerticalOptions="FillAndExpand"        
+        >
+        <Image 
+            x:Name="_Overlap_1"
+            Style="{StaticResource _BgImage}"
+            />
+        <Grid
+            x:Name="_ParentGrid"
+            Style="{StaticResource _ParentGrid}"
+            HorizontalOptions="FillAndExpand"
+            >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*" />
+                <RowDefinition Height="0*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height=".5*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+            <Grid 
+                Grid.Row="0"
+                >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".1*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width=".1*"/>
+                </Grid.ColumnDefinitions>
+                <Image x:Name="_MedLogo"
+                       Aspect="AspectFit"
+                       HorizontalOptions="Fill"
+                       VerticalOptions="Fill"
+                       Grid.Column="1"
+                       Margin="0,40,0,0"
+                       />
+            </Grid>
+            <Label 
+                Grid.Row="2" 
+                TextColor="White" 
+                HorizontalTextAlignment="Center" 
+                VerticalTextAlignment="Center" 
+                FontSize="30" 
+                FontAttributes="Bold"
+                Text="TELEMEDIC GLOBAL"
+                />
+            <!--
+            background colour was defined in the App.Xaml with the key _medAppBlack.. etc etc
+            so was style 
+            all static resources were defined in app.xaml
+            -->
+            <Button 
+                x:Name="_SignUp"
+                Grid.Row="3" 
+                Text="SIGN UP" 
+                Style="{StaticResource _MedAppButtonTextTemplate}"
+                BackgroundColor="{StaticResource _MedAppBlack}" 
+                Clicked="_signUp_Clicked"
+                />
+            <Button 
+                x:Name="_Login"
+                Grid.Row="5" 
+                Text="LOGIN"
+                Style="{StaticResource _MedAppButtonTextTemplate}"
+                BackgroundColor="{StaticResource _MedAppLightBlue}" 
+                Clicked="_logIn_Clicked"
+                />
+
+        </Grid>
+    </Grid>
+</ContentPage>

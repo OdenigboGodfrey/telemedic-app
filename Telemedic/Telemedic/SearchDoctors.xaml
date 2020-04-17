@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Telemedic.SearchDoctors">
+    <ContentPage.Content>
+        <ScrollView
+            Padding="0, 10, 0, 0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!--row 1-->
+                <StackLayout
+                    Grid.Column="0"
+                    Grid.Row="0" 
+                    >
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer
+                        Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                    </StackLayout.GestureRecognizers>
+                    <Image x:Name="icon_home_care"
+                               Aspect="AspectFit"
+                               WidthRequest="100"/>
+                    <Label Text="Home care"
+                       FontAttributes="Bold"
+                       HorizontalOptions="CenterAndExpand"
+                       TextColor="Black" />
+                </StackLayout>
+
+                <StackLayout
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    >
+                    <Image x:Name="icon_paediatrics"
+                               Aspect="AspectFit"
+                               WidthRequest="100"/>
+                    <Label Text="Paediatrics"
+                       FontAttributes="Bold"
+                       HorizontalOptions="CenterAndExpand"
+                       TextColor="Black" />
+                </StackLayout>
+
+                <StackLayout
+                    Grid.Column="2"
+                    Grid.Row="0"
+                    >
+                    <Image x:Name="icon_dem"
+                           Aspect="AspectFit"
+                           WidthRequest="100"/>
+                    <Label Text="Dermatologist"
+                       FontAttributes="Bold"
+                       HorizontalOptions="CenterAndExpand"
+                       TextColor="Black" />
+                </StackLayout>
+
+                <!--row 2-->
+                <StackLayout
+                    Grid.Column="0"
+                    Grid.Row="1"
+                    >
+                    <Image x:Name="icon_sexiologist"
+                           Aspect="AspectFit"
+                           WidthRequest="100"/>
+                    <Label Text="Sexiologist"
+                       FontAttributes="Bold"
+                       HorizontalOptions="CenterAndExpand"
+                       TextColor="Black" />
+                </StackLayout>
+
+                <StackLayout
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    >
+                    <Image x:Name="icon_dentistry"
+                            Aspect="AspectFit"
+                           WidthRequest="100"/>
+                    <Label Text="Dentistry"
+                       FontAttributes="Bold"
+                       HorizontalOptions="CenterAndExpand"
+                       TextColor="Black" />
+                </StackLayout>
+
+                <StackLayout
+                    Grid.Column="2"
+                    Grid.Row="1"
+                    >
+                    <Image 
+                        x:Name="icon_mental_health"
+                        Aspect="AspectFit"
+                        WidthRequest="100"/>
+
+                    <Label Text="Mental Health"
+                       FontAttributes="Bold"
+                       HorizontalOptions="CenterAndExpand"
+                       TextColor="Black" />
+                </StackLayout>
+
+                <!--row 3-->
+                <StackLayout
+                    Grid.Column="0"
+                    Grid.Row="2"
+                    >
+                    <Image 
+                        x:Name="icon_eye_care"
+                        Aspect="AspectFit"
+                        WidthRequest="100"/>
+                    <Label Text="Eye care"
+                       FontAttributes="Bold"
+                       HorizontalOptions="CenterAndExpand"
+                       TextColor="Black" />
+                </StackLayout>
+
+                <StackLayout
+                    Grid.Column="1"
+                    Grid.Row="2"
+                    >
+                    <Image x:Name="icon_urgent_care"
+                       Aspect="AspectFit"
+                       WidthRequest="100"/>
+                    <Label Text="Urgent Care"
+                       FontAttributes="Bold"
+                       HorizontalOptions="CenterAndExpand"
+                       TextColor="Black" />
+                </StackLayout>
+
+                <StackLayout
+                    Grid.Column="2"
+                    Grid.Row="2"
+                    >
+                    <Image x:Name="icon_radiologist"
+                       Aspect="AspectFit"
+                       WidthRequest="100"/>
+                    <Label Text="Radiologist"
+                       FontAttributes="Bold"
+                       HorizontalOptions="CenterAndExpand"
+                       TextColor="Black" />
+                </StackLayout>
+
+                <!--<StackLayout
+                Grid.Column="2"
+                Grid.Row="2">
+                <Image x:Name="icon_radiologist"
+                       Aspect="AspectFit"
+                       WidthRequest="100"/>
+                <Label Text="Radiologist"
+                       FontAttributes="Bold"
+                       HorizontalOptions="CenterAndExpand"
+                       TextColor="Black" />
+            </StackLayout>-->
+
+                <!--row 4-->
+                <StackLayout
+                Grid.Column="0"
+                Grid.Row="3"
+                >
+                    <Image 
+                    x:Name="icon_general_medicine"
+                    Aspect="AspectFit"
+                    WidthRequest="100"/>
+                    <Label Text="General Medicine"
+                       FontAttributes="Bold"
+                       FontSize="14"
+                       HorizontalOptions="CenterAndExpand"
+                       TextColor="Black" />
+                </StackLayout>
+
+                <StackLayout
+                Grid.Column="1"
+                Grid.Row="3"
+                >
+                    <Image x:Name="icon_gynecologist"
+                       Aspect="AspectFit"
+                       WidthRequest="100"/>
+
+                    <Label Text="Gynecologist"
+                       FontAttributes="Bold"
+                       HorizontalOptions="CenterAndExpand"
+                       TextColor="Black" />
+                </StackLayout>
+
+                <StackLayout
+                Grid.Column="2"
+                Grid.Row="3">
+
+                    <Image x:Name="icon_orthopedic"
+                       Aspect="AspectFit"
+                       WidthRequest="100"/>
+
+                    <Label Text="Orthopedic"
+                       FontAttributes="Bold"
+                       HorizontalOptions="CenterAndExpand"
+                       TextColor="Black" />
+                </StackLayout>
+
+                <!--row 5 -->
+                <StackLayout
+                Grid.Column="0"
+                Grid.Row="4"
+                >
+                    <Image 
+                    x:Name="icon_homeoparthy"
+                    Aspect="AspectFit"
+                    WidthRequest="100"/>
+
+                    <Label Text="Homeoparthy"
+                       FontAttributes="Bold"
+                       HorizontalOptions="CenterAndExpand"
+                       TextColor="Black" />
+                </StackLayout>
+
+                <StackLayout
+                Grid.Column="1"
+                Grid.Row="4"
+                >
+                    <Image x:Name="icon_infectious_disease"
+                       Aspect="AspectFit"
+                       WidthRequest="100"/>
+
+                    <Label Text="Infectious Disease"
+                       FontAttributes="Bold"
+                       FontSize="14"
+                       HorizontalOptions="CenterAndExpand"
+                       TextColor="Black" />
+                </StackLayout>
+
+                <StackLayout
+                Grid.Column="2"
+                Grid.Row="4">
+                    <Image x:Name="icon_otologist"
+                       Aspect="AspectFit"
+                       WidthRequest="100"/>
+
+                    <Label Text="Otologist"
+                       FontAttributes="Bold"
+                       HorizontalOptions="CenterAndExpand"
+                       TextColor="Black" />
+                </StackLayout>
+
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

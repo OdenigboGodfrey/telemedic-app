@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Telemedic.NotificationPage"
+             xmlns:images="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             >
+    <ContentPage.Resources>
+        <Style x:Key="_ImageStyle" TargetType="Image">
+            <Setter Property="WidthRequest" Value="25"/>
+            <Setter Property="HeightRequest" Value="25"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+        </Style>
+    </ContentPage.Resources>
+    <StackLayout 
+        x:Name="_ParentStack"
+        Orientation="Vertical"
+        >
+        <Grid
+            >
+            <!--Top bar image-->
+            <Grid
+            VerticalOptions="Start">
+                <Image
+                x:Name="_BgImage"
+                Aspect="Fill"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                HeightRequest="50"
+            />
+                <Label
+                Text="Notification"
+                TextColor="White"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                FontSize="Large"></Label>
+            </Grid>
+            
+            <ScrollView
+                VerticalScrollBarVisibility="Default"
+                >
+                <StackLayout
+                    x:Name="_NotificationListAll"
+                    Orientation="Vertical"
+                    HorizontalOptions="FillAndExpand"
+                    Padding="10"
+                    Margin="0,50,0,0"
+                    >
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </StackLayout>
+</ContentPage>

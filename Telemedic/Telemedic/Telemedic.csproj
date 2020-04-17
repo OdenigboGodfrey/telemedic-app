@@ -1,0 +1,259 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\baseline_camera_alt_black_48dp.png" />
+    <None Remove="Assets\baseline_location_on_black_48dp.png" />
+    <None Remove="Assets\Blur.jpg" />
+    <None Remove="Assets\dentistry5.png" />
+    <None Remove="Assets\dermatologist3.png" />
+    <None Remove="Assets\doctor_icon.png" />
+    <None Remove="Assets\doctor_ogar.JPG" />
+    <None Remove="Assets\doc_anim.jpg" />
+    <None Remove="Assets\eyecare7.png" />
+    <None Remove="Assets\generalmedicine10.png" />
+    <None Remove="Assets\gynecologist11.png" />
+    <None Remove="Assets\homecare1.png" />
+    <None Remove="Assets\homeoparthy13.png" />
+    <None Remove="Assets\hospital_icon.png" />
+    <None Remove="Assets\icon_hospital.jpg" />
+    <None Remove="Assets\icon_lab.jpg" />
+    <None Remove="Assets\icon_pharmacy.jpg" />
+    <None Remove="Assets\ic_access_time_ash.png" />
+    <None Remove="Assets\ic_arrow_back_ios.png" />
+    <None Remove="Assets\ic_arrow_forward_ios.png" />
+    <None Remove="Assets\ic_call_black.png" />
+    <None Remove="Assets\ic_call_end_light_blue.png" />
+    <None Remove="Assets\ic_call_end_white.png" />
+    <None Remove="Assets\ic_credit_card_ash.png" />
+    <None Remove="Assets\ic_date_range.png" />
+    <None Remove="Assets\ic_empty_star_yellow.png" />
+    <None Remove="Assets\ic_explore.png" />
+    <None Remove="Assets\ic_half_star_yellow.png" />
+    <None Remove="Assets\ic_help.png" />
+    <None Remove="Assets\ic_info.png" />
+    <None Remove="Assets\ic_info_black.png" />
+    <None Remove="Assets\ic_keyboard_arrow_down_white.png" />
+    <None Remove="Assets\ic_local_phone_ash.png" />
+    <None Remove="Assets\ic_lock.png" />
+    <None Remove="Assets\ic_message.png" />
+    <None Remove="Assets\ic_message_black.png" />
+    <None Remove="Assets\ic_mic_black_48dp.png" />
+    <None Remove="Assets\ic_mic_off_light_blue.png" />
+    <None Remove="Assets\ic_monetizaion_on_ash.png" />
+    <None Remove="Assets\ic_more_vert.png" />
+    <None Remove="Assets\ic_notifications.png" />
+    <None Remove="Assets\ic_person_outline.png" />
+    <None Remove="Assets\ic_settings.png" />
+    <None Remove="Assets\ic_star_yellow.png" />
+    <None Remove="Assets\ic_videocam_black_48dp.png" />
+    <None Remove="Assets\ic_videocam_light_blue.png" />
+    <None Remove="Assets\ic_volume_mute.png" />
+    <None Remove="Assets\IMG_5204.JPG" />
+    <None Remove="Assets\infectiousdiseases9.png" />
+    <None Remove="Assets\JSON\country_names.json" />
+    <None Remove="Assets\JSON\currency.json" />
+    <None Remove="Assets\JSON\phone_to_countries.json" />
+    <None Remove="Assets\laboratory_icon.png" />
+    <None Remove="Assets\Med_Gang.png" />
+    <None Remove="Assets\Med_Logo.png" />
+    <None Remove="Assets\Med_Padlock.png" />
+    <None Remove="Assets\Med_ToolBar.jpg" />
+    <None Remove="Assets\mentalhealth6.png" />
+    <None Remove="Assets\orthopedic12.png" />
+    <None Remove="Assets\otologist15.png" />
+    <None Remove="Assets\paediatrics2.png" />
+    <None Remove="Assets\pharmacy_icon.png" />
+    <None Remove="Assets\radiologist14.png" />
+    <None Remove="Assets\sexiologist4.png" />
+    <None Remove="Assets\tm_dentist.jpeg" />
+    <None Remove="Assets\tm_dermatologist.png" />
+    <None Remove="Assets\tm_eye_care.jpg" />
+    <None Remove="Assets\tm_gynecologist.png" />
+    <None Remove="Assets\tm_home_care.png" />
+    <None Remove="Assets\tm_madness.png" />
+    <None Remove="Assets\tm_radiologist.jpg" />
+    <None Remove="Assets\tm_sexio.png" />
+    <None Remove="Assets\topbar.jpg" />
+    <None Remove="Assets\urgentcare8.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\baseline_camera_alt_black_48dp.png" />
+    <EmbeddedResource Include="Assets\baseline_location_on_black_48dp.png" />
+    <EmbeddedResource Include="Assets\Blur.jpg" />
+    <EmbeddedResource Include="Assets\dentistry5.png" />
+    <EmbeddedResource Include="Assets\dermatologist3.png" />
+    <EmbeddedResource Include="Assets\doctor_icon.png" />
+    <EmbeddedResource Include="Assets\doctor_ogar.JPG" />
+    <EmbeddedResource Include="Assets\doc_anim.jpg" />
+    <EmbeddedResource Include="Assets\eyecare7.png" />
+    <EmbeddedResource Include="Assets\generalmedicine10.png" />
+    <EmbeddedResource Include="Assets\gynecologist11.png" />
+    <EmbeddedResource Include="Assets\homecare1.png" />
+    <EmbeddedResource Include="Assets\homeoparthy13.png" />
+    <EmbeddedResource Include="Assets\hospital_icon.png" />
+    <EmbeddedResource Include="Assets\icon_hospital.jpg" />
+    <EmbeddedResource Include="Assets\icon_lab.jpg" />
+    <EmbeddedResource Include="Assets\icon_pharmacy.jpg" />
+    <EmbeddedResource Include="Assets\ic_access_time_ash.png" />
+    <EmbeddedResource Include="Assets\ic_arrow_back_ios.png" />
+    <EmbeddedResource Include="Assets\ic_arrow_forward_ios.png" />
+    <EmbeddedResource Include="Assets\ic_call_black.png" />
+    <EmbeddedResource Include="Assets\ic_call_end_light_blue.png" />
+    <EmbeddedResource Include="Assets\ic_call_end_white.png" />
+    <EmbeddedResource Include="Assets\ic_credit_card_ash.png" />
+    <EmbeddedResource Include="Assets\ic_date_range.png" />
+    <EmbeddedResource Include="Assets\ic_empty_star_yellow.png" />
+    <EmbeddedResource Include="Assets\ic_explore.png" />
+    <EmbeddedResource Include="Assets\ic_half_star_yellow.png" />
+    <EmbeddedResource Include="Assets\ic_help.png" />
+    <EmbeddedResource Include="Assets\ic_info.png" />
+    <EmbeddedResource Include="Assets\ic_info_black.png" />
+    <EmbeddedResource Include="Assets\ic_keyboard_arrow_down_white.png" />
+    <EmbeddedResource Include="Assets\ic_local_phone_ash.png" />
+    <EmbeddedResource Include="Assets\ic_lock.png" />
+    <EmbeddedResource Include="Assets\ic_message.png" />
+    <EmbeddedResource Include="Assets\ic_message_black.png" />
+    <EmbeddedResource Include="Assets\ic_mic_black_48dp.png" />
+    <EmbeddedResource Include="Assets\ic_mic_off_light_blue.png" />
+    <EmbeddedResource Include="Assets\ic_monetizaion_on_ash.png" />
+    <EmbeddedResource Include="Assets\ic_more_vert.png" />
+    <EmbeddedResource Include="Assets\ic_notifications.png" />
+    <EmbeddedResource Include="Assets\ic_person_outline.png" />
+    <EmbeddedResource Include="Assets\ic_settings.png" />
+    <EmbeddedResource Include="Assets\ic_star_yellow.png" />
+    <EmbeddedResource Include="Assets\ic_videocam_black_48dp.png" />
+    <EmbeddedResource Include="Assets\ic_videocam_light_blue.png" />
+    <EmbeddedResource Include="Assets\ic_volume_mute.png" />
+    <EmbeddedResource Include="Assets\IMG_5204.JPG" />
+    <EmbeddedResource Include="Assets\infectiousdiseases9.png" />
+    <EmbeddedResource Include="Assets\JSON\country_names.json" />
+    <EmbeddedResource Include="Assets\JSON\currency.json" />
+    <EmbeddedResource Include="Assets\JSON\phone_to_countries.json" />
+    <EmbeddedResource Include="Assets\laboratory_icon.png" />
+    <EmbeddedResource Include="Assets\Med_Gang.png" />
+    <EmbeddedResource Include="Assets\Med_Logo.png" />
+    <EmbeddedResource Include="Assets\Med_Padlock.png" />
+    <EmbeddedResource Include="Assets\Med_ToolBar.jpg" />
+    <EmbeddedResource Include="Assets\mentalhealth6.png" />
+    <EmbeddedResource Include="Assets\orthopedic12.png" />
+    <EmbeddedResource Include="Assets\otologist15.png" />
+    <EmbeddedResource Include="Assets\paediatrics2.png" />
+    <EmbeddedResource Include="Assets\pharmacy_icon.png" />
+    <EmbeddedResource Include="Assets\radiologist14.png" />
+    <EmbeddedResource Include="Assets\sexiologist4.png" />
+    <EmbeddedResource Include="Assets\tm_dentist.jpeg" />
+    <EmbeddedResource Include="Assets\tm_dermatologist.png" />
+    <EmbeddedResource Include="Assets\tm_eye_care.jpg" />
+    <EmbeddedResource Include="Assets\tm_gynecologist.png" />
+    <EmbeddedResource Include="Assets\tm_home_care.png" />
+    <EmbeddedResource Include="Assets\tm_madness.png" />
+    <EmbeddedResource Include="Assets\tm_radiologist.jpg" />
+    <EmbeddedResource Include="Assets\tm_sexio.png" />
+    <EmbeddedResource Include="Assets\topbar.jpg" />
+    <EmbeddedResource Include="Assets\urgentcare8.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Net.Http" Version="2.2.29" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+    <PackageReference Include="Plugin.Permissions" Version="3.0.0.12" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.5.231" />
+    <PackageReference Include="Toasts.Forms.Plugin" Version="3.3.2" />
+    <PackageReference Include="Xam.Plugin.Connectivity" Version="3.2.0" />
+    <PackageReference Include="Xam.Plugin.Geolocator" Version="4.5.0.6" />
+    <PackageReference Include="Xam.Plugins.Forms.ImageCircle" Version="3.0.0.5" />
+    <PackageReference Include="Xamarin.FFImageLoading.Svg.Forms" Version="2.4.4.859" />
+    <PackageReference Include="Xamarin.Forms" Version="3.4.0.1008975" />
+    <PackageReference Include="Xamarin.Forms.Maps" Version="3.4.0.1008975" />
+    <PackageReference Include="Xamarin.Plugin.FilePicker" Version="2.0.135" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Windows.Foundation.UniversalApiContract">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Windows Kits\10\References\10.0.17134.0\Windows.Foundation.UniversalApiContract\6.0.0.0\Windows.Foundation.UniversalApiContract.winmd</HintPath>
+      <IsWinMDFile>true</IsWinMDFile>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="AddRecordPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="AddReviewPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="AppointmentHistoryPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="AuthorizationPinPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="BioDataPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="CallCenter.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ChangePasswordPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="DetailedWaitingPatient.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ForgotPasswordPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="HospitalBasicDetailsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ListRecordsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MedicalHistoryPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MedicalHistoryRequest.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MedicalRequestConfirmationDialog.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MedPractProfile.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MedPractWorkSettings.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MedPractWorkSettingsDisplay.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ReadRecordPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ReviewPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="TwoFactorAuthenticationPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="VideoCallCenter.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="WaitingRoom.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="WithdrawalPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

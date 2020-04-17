@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Telemedic.App">
+    <Application.Resources>
+
+        <ResourceDictionary>
+            <!-- #1E90FF -->
+            <Color x:Key="colorBlue">#0043CA</Color>
+            <Color x:Key="colorWhite">#FFFFFF</Color>
+            <Color x:Key="colorRed">#FF0000</Color>
+            <Color x:Key="colorGold">#CFB500</Color>
+            <Color x:Key="colorGreen">Green</Color>
+
+            <Style x:Key="blueButtons" TargetType="Button" >
+                <Setter Property="BackgroundColor" Value="{StaticResource colorBlue}" />
+                <Setter Property="TextColor" Value="{StaticResource colorWhite}" />
+            </Style>
+        </ResourceDictionary>
+
+        <!--
+            creating a dictionary of styles for the main action buttons e.g login,sign up
+        -->
+        <ResourceDictionary x:Name="_Buttons">
+            <Style x:Key="_MedAppButtonTextTemplate" TargetType="Button">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="BorderRadius" Value="10"/>
+                <Setter Property="HorizontalOptions" Value="Fill" />
+                <Setter Property="VerticalOptions" Value="Center"/>
+            </Style>
+        </ResourceDictionary>
+
+        <!--
+        creating a dictionary of styles for the background blur image
+        -->
+        <ResourceDictionary x:Name="_BackgroundImage">
+            <Style x:Key="_BgImage" TargetType="Image">
+                <Setter Property="Aspect" Value="AspectFill"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+            </Style>
+        </ResourceDictionary>
+        <!--
+        creating a dictionary of styles for the overlapping grid for the blur image
+        -->
+
+        <ResourceDictionary x:Name="_OverlappingGrid">
+            <Style x:Key="_ParentGrid" TargetType="Grid">
+                <Setter Property="Margin" Value="25"/>
+            </Style>
+        </ResourceDictionary>
+
+
+        <ResourceDictionary x:Name="_Colours">
+            <Color x:Key="_MedAppLightBlue">#0043CA</Color>
+            <Color x:Key="_MedAppBlack">#070707</Color>
+            <Color x:Key="_MedAppAsh">#DBDBDB</Color>
+            <Color x:Key="_MedAppChatBackground">#E0E0E0</Color>
+        </ResourceDictionary>
+
+        <!--
+            dictionary for the message frame template
+        -->
+        <ResourceDictionary>
+            <Style x:Key="_MessagesFrame" TargetType="Frame">
+                <Setter Property="CornerRadius" Value="10" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="Padding" Value="5"/>
+                <Setter Property="Margin" Value="0"/>
+            </Style>
+        </ResourceDictionary>
+
+        <!--
+            dictionary for message text template
+        -->
+        <ResourceDictionary>
+            <Style x:Key="_MessageLabel" TargetType="Label">
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="TextColor" Value="White"/>
+            </Style>
+        </ResourceDictionary>
+
+        <!-- Dictionary for the Time text teplate _MedAppAsh-->
+        <ResourceDictionary>
+            <Style x:Key="_TimeLabel" TargetType="Label">
+                <Setter Property="VerticalOptions" Value="Start"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontSize" Value="10"/>
+            </Style>
+        </ResourceDictionary>
+
+        <!--Resource Dictionary for botton boxview-->
+        <ResourceDictionary>
+            <Style TargetType="BoxView" x:Key="_BoxViewBottomLine">
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="HeightRequest" Value="1"/>
+                <Setter Property="VerticalOptions" Value="End"/>
+                <Setter Property="Margin" Value="0,3,0,0" />
+            </Style>
+        </ResourceDictionary>
+        
+        <ResourceDictionary>
+            <Style x:Key="_FrameContainer" TargetType="Frame">
+                <Setter Property="BorderColor" Value="#DBDBDB"/>
+                <Setter Property="HasShadow" Value="True"/>
+                <Setter Property="Padding" Value="10"/>
+                <Setter Property="Margin" Value="10"/>
+            </Style>
+        </ResourceDictionary>
+
+        <ResourceDictionary>
+            <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
+                <Setter Property="BackgroundColor" Value="#E0E0E0" />
+            </Style>
+        </ResourceDictionary>
+
+        <!--used for the controller in instances where the user has no info for the specific section e.g waiting list is empty-->
+        <ResourceDictionary>
+            <Style TargetType="Label" x:Key="_EmptyLabelTemplate">
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+        </ResourceDictionary>
+
+
+    </Application.Resources>
+</Application>

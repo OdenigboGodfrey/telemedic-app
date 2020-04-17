@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Telemedic"
+             x:Class="Telemedic.AddReviewPage">
+    <Frame
+        HasShadow="True"
+        OutlineColor="{StaticResource _MedAppAsh}"
+        HorizontalOptions="FillAndExpand"
+        VerticalOptions="FillAndExpand"
+        Margin="25"
+        >
+        <Grid
+            Padding="10"
+            >
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".6*"/>
+                <RowDefinition Height=".4*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label
+                Text="Submit Review"
+                TextColor="{StaticResource _MedAppLightBlue}"
+                FontSize="22"
+                FontAttributes="Bold"
+                Grid.Row="0"
+                />
+            <local:CustomEntry
+                x:Name="_Title"
+                FontSize="20"
+                FontAttributes="Bold"
+                Placeholder="Title"
+                PlaceholderColor="{StaticResource _MedAppLightBlue}"
+                Grid.Row="1">
+
+            </local:CustomEntry>
+            <!--
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborumLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnaaliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecatcupidatat non proident, sunt in culpa qui officiadeserunt mollit anim id est laborum.
+            -->
+            
+            <Editor
+                x:Name="_ReviewMessage"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                Placeholder="Review..."
+                PlaceholderColor="{StaticResource _MedAppLightBlue}"
+                Grid.Row="2"
+                />
+            <StackLayout
+                x:Name="_FavouriteStarStack"
+                Orientation="Horizontal"
+                Grid.Row="3"
+                >
+                <Image
+                    x:Name="_OneStar"
+                    Aspect="AspectFit"
+                    WidthRequest="30"
+                    HeightRequest="30"
+                    >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OneStar_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image
+                    x:Name="_TwoStar"
+                    Aspect="AspectFit"
+                    WidthRequest="30"
+                    HeightRequest="30"
+                    >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TwoStar_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image
+                    x:Name="_ThreeStar"
+                    Aspect="AspectFit"
+                    WidthRequest="30"
+                    HeightRequest="30"
+                    >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ThreeStar_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image
+                    x:Name="_FourStar"
+                    Aspect="AspectFit"
+                    WidthRequest="30"
+                    HeightRequest="30"
+                    >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="FourStar_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image
+                    x:Name="_FiveStar"
+                    Aspect="AspectFit"
+                    WidthRequest="30"
+                    HeightRequest="30"
+                    >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="FiveStar_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </StackLayout>
+            <Button
+                x:Name="_SubmitReview"
+                Style="{StaticResource _MedAppButtonTextTemplate}"
+                BackgroundColor="{StaticResource _MedAppLightBlue}"
+                HorizontalOptions="End"
+                Text="Submit"
+                Grid.Row="4"
+                WidthRequest="120"
+                Clicked="_SubmitReview_Clicked"
+                />
+        </Grid>
+    </Frame>
+    
+</ContentPage>

@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Telemedic.MedPractWorkSettingsDisplay">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label" x:Key="_StaticLabelStyling">
+                <Setter Property="TextColor" Value="{StaticResource _MedAppLightBlue}" />
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontSize" Value="Default"/>
+                <Setter Property="Margin" Value="5"/>
+            </Style>
+            <Style TargetType="Label" x:Key="_DynamicLabelStyling">
+                <Setter Property="Margin" Value="10,0,0,0" />
+            </Style>
+        </ResourceDictionary>
+        
+    </ContentPage.Resources>
+    <Frame
+        Style="{StaticResource _FrameContainer}"
+        HorizontalOptions="FillAndExpand"
+        Margin="20"
+        Padding="10"
+        HeightRequest="250"
+        VerticalOptions="Start"
+        >
+        <StackLayout Orientation="Vertical">
+            <Label
+                Text="CONSULTATION PRICE"
+                Style="{StaticResource _StaticLabelStyling}"
+                />
+            <Label
+                x:Name="_Price"
+                Text="$400 per section"
+                Style="{StaticResource _DynamicLabelStyling}"
+                />
+            <Label
+                Text="BOOKING TIME"
+                Style="{StaticResource _StaticLabelStyling}"
+                />
+            <Label
+                x:Name="_BookingTime"
+                Text="8:00Am - 8:00PM"
+                Style="{StaticResource _DynamicLabelStyling}"
+                />
+            <Label
+                Text="ACCOUNT DETAILS"
+                Style="{StaticResource _StaticLabelStyling}"
+                />
+            <Label
+                x:Name="_AccountName"
+                Text="NAME: DR OGAR SILAS"
+                Style="{StaticResource _DynamicLabelStyling}"
+                />
+            <Label
+                x:Name="_AccountNumber"
+                Text="ACCOUNT NUMBER:0022859212"
+                Style="{StaticResource _DynamicLabelStyling}"
+                />
+            <Label
+                x:Name="_BankName"
+                Text="BANK NAME: DIAMOND BANK"
+                Style="{StaticResource _DynamicLabelStyling}"
+                />
+        </StackLayout>
+    </Frame>
+    
+</ContentPage>

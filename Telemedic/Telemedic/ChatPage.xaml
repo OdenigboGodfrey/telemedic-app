@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Telemedic.ChatPage"
+             xmlns:image="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             xmlns:local="clr-namespace:Telemedic"
+             BackgroundColor="{StaticResource _MedAppChatBackground}"
+             >
+    <Grid
+        x:Name="_ParentGrid"
+        Style="{StaticResource _ParentGrid}"
+        BackgroundColor="{StaticResource _MedAppChatBackground}"
+        Margin="0"
+        HorizontalOptions="FillAndExpand"
+        VerticalOptions="FillAndExpand"
+        >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid
+            HeightRequest="50"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="Start"
+            BackgroundColor="{StaticResource _MedAppLightBlue}"
+            Grid.Row="0"
+            >
+            <!--<Grid.RowDefinitions>
+                <RowDefinition Width=".3*"/>
+                <RowDefinition Width="2*"/>
+                <RowDefinition Width=".3*"/>
+            </Grid.RowDefinitions>-->
+            <Image
+                x:Name="_BackButton"
+                Aspect="AspectFit"
+                Source="ic_arrow_back.png"
+                WidthRequest="20"
+                HeightRequest="20"
+                HorizontalOptions="Start"
+                >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="_BackButton_Clicked" />
+                </Image.GestureRecognizers>
+            </Image>
+            <Grid
+                HorizontalOptions="Center"
+                >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height=".6*" />
+                    <RowDefinition Height=".4*" />
+                </Grid.RowDefinitions>
+                <Label
+                    x:Name="_RecipientName"
+                    Text="User's Name"
+                    TextColor="White"
+                    FontSize="16"
+                    HorizontalTextAlignment="Center"
+                    Grid.Row="0"
+                    />
+                <Label
+                    x:Name="_RecipientLastSeen"
+                    Text="A few seconds ago"
+                    TextColor="White"
+                    FontSize="10"
+                    HorizontalTextAlignment="Center"
+                    Grid.Row="1"
+                    IsVisible="False"
+                    />
+            </Grid>
+            <Image
+                x:Name="_More"
+                Aspect="AspectFit"
+                HorizontalOptions="End"
+                WidthRequest="20"
+                HeightRequest="20"
+                >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="_More_Clicked"/>
+                </Image.GestureRecognizers>
+            </Image>
+        </Grid>
+        <ScrollView
+            x:Name="_ScrollView" 
+            VerticalOptions="StartAndExpand"
+            Focused="_ScrollView_Focused"
+            Grid.Row="1"
+            >
+            <StackLayout
+                x:Name="_MessageStack"
+                VerticalOptions="EndAndExpand"
+                HorizontalOptions="FillAndExpand"
+                >
+            </StackLayout>
+        </ScrollView>
+        
+        <Grid
+            x:Name="_ChatControlsHolder"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="End"
+            Grid.Row="2"
+            >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            
+            <BoxView
+                BackgroundColor="White"
+                WidthRequest="1"
+                HeightRequest="1"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="Start"
+                Margin="0,1"
+                />
+            <local:CustomEntry
+                    x:Name="_MessageEntry"
+                    VerticalOptions="End"
+                    HorizontalOptions="FillAndExpand"
+                    Placeholder="Type your message.."
+                Focused="_MessageEntry_Focused"
+                Unfocused="_MessageEntry_Unfocused"
+                    Grid.Column="0">
+
+            </local:CustomEntry>
+            <Grid 
+                x:Name="_MediaIconHolder"
+                Grid.Column="1"
+                >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Image 
+                    x:Name="_RecordAudio"
+                    Aspect="AspectFit"
+                    VerticalOptions="End"
+                    WidthRequest="30"
+                    HeightRequest="30"
+                    Grid.Column="0"
+                    >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="_RecordAudio_Tapped" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image 
+                    x:Name="_TakePicture"
+                    Aspect="AspectFit"
+                    VerticalOptions="End"
+                    WidthRequest="30"
+                    HeightRequest="30"
+                    Grid.Column="1"
+                    >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="_TakePicture_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </Grid>
+            <Button
+                x:Name="_SendMessage"
+                Text="Send"
+                Grid.Column="1"
+                VerticalOptions="End"
+                TextColor="White"
+                BackgroundColor="{StaticResource _MedAppLightBlue}"
+                IsVisible="False"
+                Clicked="_SendMessage_Clicked"
+                />
+        </Grid>
+        <!----><!--
+        <Grid
+            x:Name="_ChatControlsHolder"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="End"
+            Grid.Row="2"
+            >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <BoxView
+                BackgroundColor="White"
+                WidthRequest="1"
+                HeightRequest="1"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="Start"
+                Margin="0,1"
+                />
+            <Grid
+                x:Name="_DefaultSendBar"
+                Margin="5"
+                >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="7*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <local:CustomEntry
+                    x:Name="_DefaultMessageEntry"
+                    VerticalOptions="End"
+                    HorizontalOptions="FillAndExpand"
+                    Placeholder="Type your message.."
+                    Grid.Column="0"
+                    Focused="_DefaultMessageEntry_Focused">
+
+                </local:CustomEntry>
+                <Image 
+                    x:Name="_RecordAudio"
+                    Aspect="AspectFit"
+                    VerticalOptions="End"
+                    WidthRequest="30"
+                    HeightRequest="30"
+                    Grid.Column="1"
+                    >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="_RecordAudio_Tapped" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image 
+                    x:Name="_TakePicture"
+                    Aspect="AspectFit"
+                    VerticalOptions="End"
+                    WidthRequest="30"
+                    HeightRequest="30"
+                    Grid.Column="2"
+                    >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="_TakePicture_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </Grid>
+
+            <Grid
+                x:Name="_SecondarySendBar"
+                IsVisible="False"
+                Margin="5"
+                >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="8*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                
+                <local:CustomEntry
+                    x:Name="_MessageEntry"
+                    VerticalOptions="End"
+                    HorizontalOptions="FillAndExpand"
+                    Placeholder="Type your message.."
+                    Grid.Column="0">
+
+                </local:CustomEntry>
+                <Button
+                    x:Name="_SendMessage"
+                    Text="Send"
+                    Grid.Column="1"
+                    VerticalOptions="End"
+                    TextColor="White"
+                    BackgroundColor="{StaticResource _MedAppLightBlue}"
+                    Clicked="_SendMessage_Clicked"
+                    />
+            </Grid>
+        </Grid>-->
+    </Grid>
+    
+</ContentPage>

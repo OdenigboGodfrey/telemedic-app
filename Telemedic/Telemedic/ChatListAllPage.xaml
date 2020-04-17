@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Telemedic.ChatListAllPage"
+             xmlns:image="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             xmlns:local="clr-namespace:Telemedic"
+             >
+    
+    <ContentPage.Resources>
+        <Style x:Key="_ImageStyle" TargetType="Image">
+            <Setter Property="WidthRequest" Value="25"/>
+            <Setter Property="HeightRequest" Value="25"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <StackLayout 
+        x:Name="_ParentStack"
+        Orientation="Vertical"
+        HorizontalOptions="FillAndExpand"
+        VerticalOptions="FillAndExpand"
+        >
+        <Grid
+            VerticalOptions="Start"
+            >
+            <!--Top bar image-->
+            <Image
+                x:Name="_BgImage"
+                Aspect="Fill"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                HeightRequest="50"
+            />
+            <Label
+                Text="Chat List"
+                TextColor="White"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                FontSize="Large"></Label>
+            
+        </Grid>
+        <local:CustomSearchEntry
+                x:Name="_SearchMessages"
+                HorizontalOptions="FillAndExpand"
+                HorizontalTextAlignment="Start"
+                TextColor="Black"
+                Placeholder="Search Messages"
+                PlaceholderColor="#636060"
+                BackgroundColor="Transparent"
+                HeightRequest="40"
+                ></local:CustomSearchEntry>
+
+        <Grid
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            >
+            <ScrollView    
+                VerticalScrollBarVisibility="Default"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                >
+                <StackLayout
+                    x:Name="_ChatsListAll"
+                    Orientation="Vertical"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    Padding="5"
+                    >
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </StackLayout.GestureRecognizers>
+                    
+                </StackLayout>
+            </ScrollView>
+            <!-- pop us container-->
+            <AbsoluteLayout
+                x:Name="_UserPopUpGrid"
+                WidthRequest="250"
+                HeightRequest="250"
+                HorizontalOptions="Center"
+                VerticalOptions="Start"
+                BackgroundColor="White"
+                IsVisible="False"
+                Unfocused="_UserPopUpGrid_Unfocused"
+                >
+                <Grid
+                    VerticalOptions="Start"
+                    HorizontalOptions="Center"
+                    >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height=".9*"/>
+                        <RowDefinition Height=".1*"/>
+                    </Grid.RowDefinitions>
+                    <Image
+                        x:Name="_PopUpUserImage"
+                        Aspect="AspectFill"
+                        WidthRequest="250"
+                        HeightRequest="230"
+                        Grid.Column="0"
+                        BackgroundColor="White"
+                        />
+                    <Grid
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand"
+                        Grid.Row="1"
+                        >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Image 
+                            x:Name="_PopUpMessage"
+                            Style="{StaticResource _ImageStyle}"
+                            Grid.Column="0"
+                            
+                            >
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="_PopUpMessage_Tapped"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <Image
+                            x:Name="_PopUpMakeCall"
+                            Style="{StaticResource _ImageStyle}"
+                            Grid.Column="1"
+                            >
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="_PopUpMakeCall_Tapped"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <Image 
+                            x:Name="_PopUpMakeVideoCall"
+                            Style="{StaticResource _ImageStyle}"
+                            Grid.Column="2"
+                            >
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="_PopUpMakeVideoCall_Tapped"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <Image 
+                            x:Name="_PopUpUserInfo"
+                            Style="{StaticResource _ImageStyle}"
+                            Grid.Column="3"
+                            >
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="_PopUpUserInfo_Tapped"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Grid>
+                </Grid>
+            </AbsoluteLayout>
+        </Grid>
+    </StackLayout>
+</ContentPage>

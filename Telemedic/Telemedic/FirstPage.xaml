@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="Telemedic.FirstPage"
+             Padding="0"
+             >
+    <Grid
+        x:Name="_ParentGrid"
+        HorizontalOptions="FillAndExpand"
+        VerticalOptions="FillAndExpand"
+        Padding="0"
+        Margin="0"
+        >
+        <Grid
+            x:Name="_MapGrid"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            Padding="0"
+            Margin="0, 0, 0, 30"
+            >
+        </Grid>
+        
+
+        <Button Text="Emegency"
+            Clicked="HandleEmergency"
+            BackgroundColor="{StaticResource colorRed}"
+            TextColor="{StaticResource colorWhite}"
+            HorizontalOptions="Center"
+            VerticalOptions="Start"
+            WidthRequest="200"
+            Margin="0, 50, 0, 0"
+            BorderRadius="10"
+                />
+        <!--<Button Text="Book Appointment"
+                Clicked="HandleBookings"
+                Style="{StaticResource blueButtons}"
+                VerticalOptions="End"
+                WidthRequest="200"
+                />-->
+        <Label
+            Text="Book an appointment."
+            HorizontalOptions="FillAndExpand"
+            HorizontalTextAlignment="Center"
+            VerticalOptions="End" 
+            />
+        <ScrollView 
+            Orientation="Horizontal" 
+            VerticalOptions="End" 
+            HorizontalOptions="Center"
+            Padding="10"
+            BackgroundColor="Transparent"
+            WidthRequest="300"
+            >
+            <StackLayout 
+                Orientation="Horizontal" 
+                Spacing="5" 
+                BackgroundColor="Transparent"
+                HorizontalOptions="FillAndExpand"
+                >
+                <Button
+                    x:Name="_Doctor"
+                    Text="Doctors"
+                    Style="{StaticResource _MedAppButtonTextTemplate}"
+                    BackgroundColor="{StaticResource colorBlue}"
+                    WidthRequest="200"
+                    Margin="50,0,20,0"
+                    Clicked="_Doctor_Clicked"
+                    />
+                <Button
+                    x:Name="_Pharmacy"
+                    Text="Pharmacies"
+                    Style="{StaticResource _MedAppButtonTextTemplate}"
+                    BackgroundColor="{StaticResource colorBlue}"
+                    WidthRequest="200"
+                    Margin="20,0,20,0"
+                    Clicked="_Pharmacy_Clicked"
+                    />
+                <Button
+                    x:Name="_Lab"
+                    Text="Labs"
+                    Style="{StaticResource _MedAppButtonTextTemplate}"
+                    BackgroundColor="{StaticResource colorBlue}"
+                    WidthRequest="200"
+                    Margin="20,0,20,0"
+                    Clicked="_Lab_Clicked"
+                    />
+                <Button
+                    x:Name="_Hospital"
+                    Text="Hospital"
+                    Style="{StaticResource _MedAppButtonTextTemplate}"
+                    BackgroundColor="{StaticResource colorBlue}"
+                    WidthRequest="200"
+                    Margin="20,0,50,0"
+                    Clicked="_Hospital_Clicked"
+                    />
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+        
+</ContentPage>

@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Telemedic.FundAccountPage"
+             Title="Fund Account"
+             >
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame 
+                Style="{StaticResource _FrameContainer}"
+                Margin="10"
+                BackgroundColor="#38A1F3"
+                >
+                <StackLayout>
+                    <Label 
+                        Text="ENTER YOUR CARD DETAILS"
+                        HorizontalOptions="CenterAndExpand"
+                        TextColor="White"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width=".6*"/>
+                            <ColumnDefinition Width=".4*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <Frame
+                            Grid.Column="0"
+                            Grid.Row="0"
+                               >
+                            <StackLayout>
+                                <Label 
+                                    Text="Card number"
+                                    TextColor="{StaticResource colorBlue}"
+                                    />
+                                <Entry 
+                                    x:Name="_CardNumber"
+                                    Placeholder="0123456789"/>
+                            </StackLayout>
+                        </Frame>
+
+                        <Frame
+                           Grid.Column="1" Grid.Row="0">
+                            <StackLayout>
+                                <Label 
+                                    Text="Expires"
+                                    TextColor="{StaticResource colorBlue}"
+                                    />
+                                <Entry 
+                                    x:Name="_ExpiryDate"
+                                    Placeholder="MM/YY"/>
+                            </StackLayout>
+                        </Frame>
+
+                        <Frame
+                           Grid.Column="0"
+                           Grid.Row="1">
+                            <StackLayout>
+                                <Label 
+                                    Text="Name"
+                                    TextColor="{StaticResource colorBlue}"
+                                    />
+                                <Entry 
+                                    x:Name="_Name"
+                                    Placeholder="Enter Name"/>
+                            </StackLayout>
+                        </Frame>
+
+                        <Frame
+                           Grid.Column="1"
+                           Grid.Row="1">
+                            <StackLayout>
+                                <Label 
+                                    Text="CVC"
+                                    TextColor="{StaticResource colorBlue}"/>
+                                <Entry 
+                                    x:Name="_CVC"
+                                    Placeholder="000"/>
+                            </StackLayout>
+                        </Frame>
+                    </Grid>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label
+                            Text="Amount"
+                            TextColor="White"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalTextAlignment="Center"
+                            FontSize="Medium"
+                            Margin="15, 0"
+                            Grid.Column="0"
+                            />
+                        <Label
+                            Text="Curr"
+                            TextColor="White"
+                            HorizontalOptions="FillAndExpand"
+                            HorizontalTextAlignment="End"
+                            VerticalTextAlignment="Center"
+                            FontSize="Medium"
+                            Margin="15, 0"
+                            Grid.Column="1"
+                            />
+                    </Grid>
+                    <Frame
+                        BackgroundColor="WhiteSmoke"
+                        CornerRadius="8">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Entry
+                                x:Name="_Amount"
+                                Placeholder="0.00"
+                                TextColor="Black"
+                                HorizontalOptions="FillAndExpand"
+                                Grid.Column="0"
+                                />
+                            <Entry
+                                x:Name="_Currency"
+                                Placeholder="USD"
+                                TextColor="Black"
+                                HorizontalOptions="FillAndExpand"
+                                HorizontalTextAlignment="End"
+                                Grid.Column="1"
+                                IsEnabled="False"
+                                />
+                        </Grid>
+                    </Frame>
+                    <Button
+                        x:Name="_Fund"
+                        Style="{StaticResource _MedAppButtonTextTemplate}"
+                        Text="FUND"
+                        TextColor="White"
+                        BackgroundColor="{StaticResource colorBlue}"
+                        Margin="0,10,0,3"
+                        Clicked="_Fund_Clicked"
+                        />
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Telemedic.WalletPage">
+    <StackLayout
+        x:Name="_ParentStack"
+        VerticalOptions="FillAndExpand"
+        BackgroundColor="{StaticResource _MedAppChatBackground}"
+        >
+        <!--Top bar image-->
+        <Grid
+            VerticalOptions="Start"
+            HeightRequest="50">
+            <Image
+                x:Name="_BgImage"
+                Aspect="Fill"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+            />
+            <Label
+                Text="Wallet"
+                TextColor="White"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                FontSize="Large"></Label>
+        </Grid>
+        
+        <Frame
+            BackgroundColor="{StaticResource _MedAppChatBackground}"
+            VerticalOptions="FillAndExpand"
+            Margin="30, 50, 30, 30"
+            >
+            <StackLayout>
+                <StackLayout
+                    VerticalOptions="Start">
+                    <Button 
+                        x:Name="_FundAccount"
+                        Text="Fund Account"
+                        TextColor="White"
+                        BackgroundColor="{StaticResource colorBlue}"
+                        FontAttributes="Bold"
+                        HorizontalOptions="End"
+                        Padding="10"
+                        CornerRadius="10"
+                        Clicked="_FundAccount_Clicked"
+                        />
+
+                    <Label
+                        x:Name="_Balance"
+                        HorizontalTextAlignment="Center"
+                        HorizontalOptions="FillAndExpand"
+                        Text="$50,000"
+                        TextColor="Black"
+                        Margin="0,10,0,20"
+                        FontAttributes="Bold"
+                        FontSize="Large"
+                        />
+                    <Label
+                        Text="TRANSACTION HISTORY"
+                        TextColor="Black"
+                        HorizontalOptions="FillAndExpand"
+                        HorizontalTextAlignment="Center"
+                        VerticalTextAlignment="Center"
+                        FontSize="Medium"
+                        />
+                </StackLayout>
+                <!--credit/debit section-->
+                <ScrollView
+                    Orientation="Vertical"
+                    VerticalScrollBarVisibility="Default"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    >
+                    <StackLayout
+                        x:Name="_TransactionParent"
+                        >
+                    </StackLayout>
+                </ScrollView>
+                
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</ContentPage>

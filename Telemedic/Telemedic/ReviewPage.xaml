@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Telemedic.ReviewPage">
+
+    <Frame
+        HasShadow="True"
+        BorderColor="{StaticResource _MedAppAsh}"
+        Margin="25"
+        >
+        <StackLayout
+            Orientation="Vertical"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            >
+            <Label
+                x:Name="_Title"
+                FontSize="20"
+                FontAttributes="Bold"
+                Text="Title"
+                TextColor="{StaticResource _MedAppLightBlue}"
+                HorizontalTextAlignment="Center"
+                />
+            <ScrollView VerticalOptions="FillAndExpand">
+                <Label
+                    x:Name="_ReviewMessage"
+                    Text="User's review would be loaded here soon."
+                    />
+            </ScrollView>
+
+            <StackLayout
+                x:Name="_FavouriteStarStack"
+                Orientation="Horizontal"
+                VerticalOptions="End"
+                >
+            </StackLayout>
+        </StackLayout>
+        
+    </Frame>
+</ContentPage>

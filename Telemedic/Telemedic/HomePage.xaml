@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:Telemedic"
+            NavigationPage.HasNavigationBar="False"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            android:TabbedPage.BarItemColor="Gray"
+            android:TabbedPage.BarSelectedItemColor="{StaticResource _MedAppLightBlue}"
+            x:Class="Telemedic.HomePage"
+            >
+<!--
+    
+            BackgroundColor="White"            
+    android:TabbedPage.ToolbarPlacement="Bottom"
+            android:TabbedPage.BarItemColor="Black"
+            android:TabbedPage.BarSelectedItemColor="Blue"
+    @drawable/
+    -->
+    <local:FirstPage Title="Home"
+                     Icon="ic_action_home.png"
+                     />
+    <local:WaitingRoom Title="Home"
+                     Icon="ic_action_home.png"
+                     />
+    <local:ChatListAllPage Title="Chat"
+                    Icon="ic_action_chat.png"
+                    />
+    <local:WalletPage Title="Wallet"
+                      Icon="ic_action_wallet.png"
+                      />
+    <local:NotificationPage Title="News"
+                            Icon="ic_action_notifications.png"
+                      />
+    <local:ProfilePage Title="More"
+              Icon="ic_action_more.png"
+                    />
+
+</TabbedPage>

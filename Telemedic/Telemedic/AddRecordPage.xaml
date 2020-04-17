@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Telemedic"
+             x:Class="Telemedic.AddRecordPage"
+             Title="Add Record"
+             >
+    <Frame
+        HasShadow="True"
+        BorderColor="{StaticResource _MedAppAsh}"
+        Margin="25"
+        >
+        <StackLayout
+            Orientation="Vertical"
+            >
+            <local:CustomEntry
+                x:Name="_RecordTitle"
+                Placeholder="Title"
+                PlaceholderColor="{StaticResource _MedAppLightBlue}">
+
+            </local:CustomEntry>
+            <Editor
+                x:Name="_RecordContent"
+                Placeholder="Record"
+                PlaceholderColor="{StaticResource _MedAppLightBlue}"
+                HorizontalOptions="FillAndExpand"
+                HeightRequest="200"
+                />
+            <!--code for file picker here-->
+            <Button
+                x:Name="_Submit"
+                Text="SUBMIT"
+                Style="{StaticResource _MedAppButtonTextTemplate}"
+                BackgroundColor="{StaticResource _MedAppLightBlue}"
+                Clicked="_Submit_Clicked"
+                />
+        </StackLayout>
+    </Frame>
+</ContentPage>

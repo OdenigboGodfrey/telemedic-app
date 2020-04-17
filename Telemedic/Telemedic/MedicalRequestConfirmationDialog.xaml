@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Telemedic.MedicalRequestConfirmationDialog"
+             BackgroundColor="White"
+             >
+    <Frame
+        Style="{StaticResource _FrameContainer}"
+        Margin="30"
+        Padding="20"
+        WidthRequest="250"
+        HeightRequest="250"
+        HorizontalOptions="Center"
+        VerticalOptions="Center"
+        >
+        <StackLayout Orientation="Vertical">
+            <Label 
+                Text="Are you sure you want to request this users medical history"
+                FontAttributes="Bold"
+                />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width=".5*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button
+                    x:Name="_Cancel"
+                    Style="{StaticResource _MedAppButtonTextTemplate}"
+                    Text="CANCEL"
+                    BackgroundColor="{StaticResource _MedAppLightBlue}"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="End"
+                    Grid.Column="0"
+                    Clicked="_Cancel_Clicked"
+                    />
+                <Button
+                    x:Name="_OK"
+                    Style="{StaticResource _MedAppButtonTextTemplate}"
+                    Text="YES"
+                    BackgroundColor="{StaticResource _MedAppLightBlue}"
+                    HorizontalOptions="EndAndExpand"
+                    VerticalOptions="End"
+                    Grid.Column="2"
+                    
+                    Clicked="_OK_Clicked"
+                    />
+            </Grid>
+        </StackLayout>
+    </Frame>
+</ContentPage>

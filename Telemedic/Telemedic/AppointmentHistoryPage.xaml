@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Telemedic.AppointmentHistoryPage"
+             Title="Appointment History"
+             >
+    <ScrollView
+        VerticalOptions="StartAndExpand"
+        HorizontalOptions="FillAndExpand"
+        >
+        <StackLayout
+            x:Name="_ParentStack"
+            VerticalOptions="StartAndExpand"
+            HorizontalOptions="FillAndExpand"
+            Orientation="Vertical"
+            >
+            <Frame
+                ClassId="For-Doctor"
+                Style="{StaticResource _FrameContainer}"
+                BackgroundColor="Transparent"
+                BorderColor="{StaticResource _MedAppAsh}"
+                HeightRequest="40"
+                Margin="0"
+                >
+                <Grid
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label
+                        Text="NAME"
+                        TextColor="{StaticResource _MedAppLightBlue}"
+                        HorizontalTextAlignment="Center"
+                        VerticalTextAlignment="Center"
+                        Grid.Column="0"
+                        />
+                    <Label
+                        Text="DATE"
+                        TextColor="{StaticResource _MedAppLightBlue}"
+                        HorizontalTextAlignment="Center"
+                        VerticalTextAlignment="Center"
+                        Grid.Column="1"
+                        />
+                    <Label
+                        Text="STATUS"
+                        TextColor="{StaticResource _MedAppLightBlue}"
+                        HorizontalTextAlignment="Center"
+                        VerticalTextAlignment="Center"
+                        Grid.Column="2"
+                        />
+                </Grid>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
+    
+</ContentPage>

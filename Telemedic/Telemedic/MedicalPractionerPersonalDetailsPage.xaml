@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Telemedic.MedicalPractionerPersonalDetailsPage">
+    <ScrollView>
+        <StackLayout 
+            Orientation="Vertical" 
+            VerticalOptions="FillAndExpand"
+            Margin="25"
+            >
+            <Label
+                Text="Personal Details"
+                FontAttributes="Bold"
+                HorizontalTextAlignment="Center"
+            />
+            <Label
+                Text="NAME"
+            />
+            <Entry
+                x:Name="_FullName"
+                Placeholder="Enter Full Name"
+                HorizontalOptions="FillAndExpand"
+            />
+            <Label
+                Text="USERNAME"
+            />
+            <Entry
+                x:Name="_Username"
+                Placeholder="Enter Username"
+                HorizontalOptions="FillAndExpand"
+            />
+            <Label
+                Text="GENDER"
+            />
+            <Picker
+                x:Name="_Gender"
+                HorizontalOptions="FillAndExpand"
+            />
+            <Label
+                Text="STATE"
+            />
+            <Picker
+                x:Name="_State"
+                HorizontalOptions="FillAndExpand"
+            />
+            <Label
+                Text="HOME ADDRESS"
+            />
+            <Entry
+                x:Name="_HomeAddress"
+                Placeholder="Enter Home Address"
+                HorizontalOptions="FillAndExpand"
+            />
+            <Label
+                Text="DATE OF BIRTH"
+            />
+            <DatePicker
+                x:Name="_DOB"
+                Format="yyyy-MM-dd"
+            />
+            <Label
+                Text="BLOOD GROUP"
+            />
+            <Picker
+                x:Name="_BloodGroup"
+                HorizontalOptions="FillAndExpand"
+            />
+            <!--<Label
+                Text="BIO DATA"
+            />
+            <Editor
+                x:Name="_BioData"
+                Placeholder="Enter Bio Data Information"
+                HorizontalOptions="FillAndExpand"
+                HeightRequest="100"
+            />-->
+            <Label
+                Text="Medical Category"
+            />
+            <Picker
+                x:Name="_MedCategory"
+                HorizontalOptions="FillAndExpand" 
+                SelectedIndex="0"
+            />
+            <!-- Info regarding hospital would be here-->
+            <Button 
+                x:Name="_SignUp"
+                Text="SIGN UP"
+                BackgroundColor="{StaticResource _MedAppLightBlue}"
+                Style="{StaticResource _MedAppButtonTextTemplate}"
+                Clicked="_SignUp_Clicked"
+            />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

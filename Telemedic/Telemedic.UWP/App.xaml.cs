@@ -22,7 +22,7 @@ namespace Telemedic.UWP
     /// </summary>
     sealed partial class App : Application
     {
-        private const String BingMapsKey = "c4pndmGKcLflDi8xh6Jc~gROsyAfNawCRS7NzqB1GhQ~AjGqITUQDkUN_Xs2nZPCHQC69cdRflbTOQtePrIYDW4SGoL9pxPsiFFNC-Ty50cF";
+        private const String BingMapsKey = "API_KEY";
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
